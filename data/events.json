@@ -1,0 +1,216 @@
+{
+  "events": [
+    {
+      "id": "football",
+      "name": "Football",
+      "sanskrit": "चक्रव्यूह",
+      "battle": "Chakravyuh - The Impenetrable Formation",
+      "description": "Like the legendary Chakravyuh that only Abhimanyu could enter, this battlefield tests your team's ability to break through defenses and strike with precision. Only the most coordinated warriors shall emerge victorious.",
+      "icon": "⚽",
+      "weapon": "Formation Shield",
+      "dates": "March 15-17, 2026",
+      "venue": "DTU Main Football Ground",
+      "teamSize": "11 + 5 substitutes",
+      "entryFee": "₹2000 per team",
+      "prizePool": "₹50,000",
+      "schedule": [
+        { "round": "Group Stage", "date": "March 15, 2026", "time": "9:00 AM - 6:00 PM", "venue": "Main Ground" },
+        { "round": "Quarter Finals", "date": "March 16, 2026", "time": "9:00 AM - 1:00 PM", "venue": "Main Ground" },
+        { "round": "Semi Finals", "date": "March 16, 2026", "time": "3:00 PM - 6:00 PM", "venue": "Main Ground" },
+        { "round": "Finals", "date": "March 17, 2026", "time": "4:00 PM", "venue": "Main Ground" }
+      ],
+      "rules": [
+        "Standard FIFA rules apply",
+        "Two halves of 35 minutes each",
+        "Maximum 3 substitutions per match",
+        "Yellow and red card system enforced",
+        "No metal studs allowed"
+      ],
+      "teams": ["DTU", "NSUT", "IIIT Delhi", "NIT Delhi", "IGDTUW", "Jamia Millia", "JNU", "Delhi University", "Amity", "IP University"],
+      "coordinator": {
+        "name": "Rahul Sharma",
+        "role": "Event Head",
+        "phone": "+91 98765 43210",
+        "email": "football@aahvaan.in"
+      }
+    },
+    {
+      "id": "basketball",
+      "name": "Basketball",
+      "sanskrit": "गदा युद्ध",
+      "battle": "Gada Yuddh - The Mace Battle",
+      "description": "Channel the power of Bhima and Duryodhana's legendary mace duel. This is a battle of strength, agility, and thunderous dunks. Rise above your opponents and claim victory.",
+      "icon": "🏀",
+      "weapon": "The Mace",
+      "dates": "March 15-17, 2026",
+      "venue": "DTU Indoor Sports Complex",
+      "teamSize": "5 + 7 substitutes",
+      "entryFee": "₹1500 per team",
+      "prizePool": "₹40,000",
+      "schedule": [
+        { "round": "Group Stage", "date": "March 15, 2026", "time": "10:00 AM - 5:00 PM", "venue": "Indoor Court A" },
+        { "round": "Quarter Finals", "date": "March 16, 2026", "time": "10:00 AM - 2:00 PM", "venue": "Indoor Court A" },
+        { "round": "Semi Finals", "date": "March 16, 2026", "time": "4:00 PM - 6:00 PM", "venue": "Indoor Court A" },
+        { "round": "Finals", "date": "March 17, 2026", "time": "2:00 PM", "venue": "Indoor Court A" }
+      ],
+      "rules": [
+        "FIBA rules apply",
+        "Four quarters of 10 minutes each",
+        "5 personal fouls limit",
+        "Shot clock: 24 seconds",
+        "Technical fouls result in free throws"
+      ],
+      "teams": ["DTU", "NSUT", "IIT Delhi", "DCE Alumni", "Jamia", "Delhi University", "Bennett", "SRM Delhi"],
+      "coordinator": {
+        "name": "Priya Verma",
+        "role": "Event Head",
+        "phone": "+91 98765 43211",
+        "email": "basketball@aahvaan.in"
+      }
+    },
+    {
+      "id": "cricket",
+      "name": "Cricket",
+      "sanskrit": "गाण्डीव प्रहार",
+      "battle": "Gandiva Strike - Arjuna's Divine Bow",
+      "description": "Wield the precision of Arjuna's legendary Gandiva bow. Every shot is an arrow, every wicket a fallen warrior. This is where batsmen become archers and bowlers become divine weapons.",
+      "icon": "🏏",
+      "weapon": "Gandiva Bow",
+      "dates": "March 15-17, 2026",
+      "venue": "DTU Cricket Ground",
+      "teamSize": "11 + 4 substitutes",
+      "entryFee": "₹2500 per team",
+      "prizePool": "₹75,000",
+      "schedule": [
+        { "round": "League Stage", "date": "March 15, 2026", "time": "8:00 AM - 6:00 PM", "venue": "Cricket Ground" },
+        { "round": "Super 8", "date": "March 16, 2026", "time": "8:00 AM - 4:00 PM", "venue": "Cricket Ground" },
+        { "round": "Semi Finals", "date": "March 16, 2026", "time": "5:00 PM - 8:00 PM", "venue": "Cricket Ground" },
+        { "round": "Finals", "date": "March 17, 2026", "time": "10:00 AM", "venue": "Cricket Ground" }
+      ],
+      "rules": [
+        "T20 format matches",
+        "Powerplay: First 6 overs",
+        "Maximum 4 overs per bowler",
+        "DLS method for rain interruptions",
+        "Super Over in case of tie"
+      ],
+      "teams": ["DTU", "NSUT", "NIT Delhi", "IIIT Delhi", "Jamia", "Delhi University", "IP University", "Amity", "Shiv Nadar", "BITS Pilani"],
+      "coordinator": {
+        "name": "Amit Kumar",
+        "role": "Event Head",
+        "phone": "+91 98765 43212",
+        "email": "cricket@aahvaan.in"
+      }
+    },
+    {
+      "id": "volleyball",
+      "name": "Volleyball",
+      "sanskrit": "सुदर्शन",
+      "battle": "Sudarshana - The Divine Discus",
+      "description": "Like Krishna's Sudarshana Chakra spinning through the air, the volleyball becomes a divine discus of destruction. Spike with fury, block with resolve, and serve with precision.",
+      "icon": "🏐",
+      "weapon": "Sudarshana Chakra",
+      "dates": "March 15-16, 2026",
+      "venue": "DTU Volleyball Court",
+      "teamSize": "6 + 6 substitutes",
+      "entryFee": "₹1200 per team",
+      "prizePool": "₹30,000",
+      "schedule": [
+        { "round": "Pool Matches", "date": "March 15, 2026", "time": "9:00 AM - 5:00 PM", "venue": "Outdoor Court" },
+        { "round": "Quarter Finals", "date": "March 16, 2026", "time": "9:00 AM - 12:00 PM", "venue": "Outdoor Court" },
+        { "round": "Semi Finals", "date": "March 16, 2026", "time": "2:00 PM - 4:00 PM", "venue": "Outdoor Court" },
+        { "round": "Finals", "date": "March 16, 2026", "time": "5:00 PM", "venue": "Outdoor Court" }
+      ],
+      "rules": [
+        "FIVB rules apply",
+        "Best of 3 sets (Finals: Best of 5)",
+        "Rally scoring to 25 points",
+        "2-point advantage required",
+        "Libero allowed with restrictions"
+      ],
+      "teams": ["DTU", "NSUT", "NIT Delhi", "Jamia", "Delhi University", "IP University", "GGSIPU", "Amity"],
+      "coordinator": {
+        "name": "Neha Singh",
+        "role": "Event Head",
+        "phone": "+91 98765 43213",
+        "email": "volleyball@aahvaan.in"
+      }
+    },
+    {
+      "id": "badminton",
+      "name": "Badminton",
+      "sanskrit": "शक्ति अस्त्र",
+      "battle": "Shakti Astra - Projectile Weapons",
+      "description": "The shuttlecock becomes your Shakti Astra - a projectile weapon of legendary power. Swift movements, precise strikes, and strategic placement will determine the victor of this aerial battle.",
+      "icon": "🏸",
+      "weapon": "Shakti Astra",
+      "dates": "March 15-16, 2026",
+      "venue": "DTU Indoor Badminton Hall",
+      "teamSize": "Singles / Doubles",
+      "entryFee": "₹500 (Singles) / ₹800 (Doubles)",
+      "prizePool": "₹25,000",
+      "schedule": [
+        { "round": "Preliminary Rounds", "date": "March 15, 2026", "time": "9:00 AM - 6:00 PM", "venue": "Indoor Hall" },
+        { "round": "Quarter Finals", "date": "March 16, 2026", "time": "9:00 AM - 12:00 PM", "venue": "Indoor Hall" },
+        { "round": "Semi Finals", "date": "March 16, 2026", "time": "2:00 PM - 4:00 PM", "venue": "Indoor Hall" },
+        { "round": "Finals", "date": "March 16, 2026", "time": "5:00 PM", "venue": "Indoor Hall" }
+      ],
+      "rules": [
+        "BWF rules apply",
+        "Best of 3 games",
+        "21 points per game",
+        "2-point advantage rule",
+        "Service alternates after each point"
+      ],
+      "teams": ["Individual participants from all colleges"],
+      "coordinator": {
+        "name": "Vikram Reddy",
+        "role": "Event Head",
+        "phone": "+91 98765 43214",
+        "email": "badminton@aahvaan.in"
+      }
+    },
+    {
+      "id": "swimming",
+      "name": "Swimming",
+      "sanskrit": "वरुण क्षेत्र",
+      "battle": "Varuna's Domain - God of Waters",
+      "description": "Enter the domain of Lord Varuna, the god of waters. This is where warriors become fish, cutting through water with divine speed. Conquer the depths and claim victory in Varuna's realm.",
+      "icon": "🏊",
+      "weapon": "Varuna's Trident",
+      "dates": "March 16, 2026",
+      "venue": "DTU Swimming Pool",
+      "teamSize": "Individual / Relay (4)",
+      "entryFee": "₹300 (Individual) / ₹1000 (Relay)",
+      "prizePool": "₹20,000",
+      "schedule": [
+        { "round": "50m Freestyle Heats", "date": "March 16, 2026", "time": "9:00 AM - 10:00 AM", "venue": "Swimming Pool" },
+        { "round": "100m Freestyle Heats", "date": "March 16, 2026", "time": "10:30 AM - 12:00 PM", "venue": "Swimming Pool" },
+        { "round": "Backstroke & Butterfly", "date": "March 16, 2026", "time": "2:00 PM - 4:00 PM", "venue": "Swimming Pool" },
+        { "round": "Relay Finals", "date": "March 16, 2026", "time": "4:30 PM - 5:30 PM", "venue": "Swimming Pool" }
+      ],
+      "rules": [
+        "FINA rules apply",
+        "Electronic timing system",
+        "False start results in disqualification",
+        "Lane assignments based on heats",
+        "Proper swimwear mandatory"
+      ],
+      "teams": ["Individual participants from all colleges"],
+      "coordinator": {
+        "name": "Anjali Mehta",
+        "role": "Event Head",
+        "phone": "+91 98765 43215",
+        "email": "swimming@aahvaan.in"
+      }
+    }
+  ],
+  "meta": {
+    "festivalName": "AAHVAAN'26",
+    "dates": "March 15-17, 2026",
+    "venue": "Delhi Technological University",
+    "tagline": "युद्धं देहि - Prepare for Battle",
+    "registrationDeadline": "March 10, 2026",
+    "contactEmail": "info@aahvaan.in"
+  }
+}

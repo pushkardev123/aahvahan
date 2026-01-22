@@ -1,0 +1,415 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register | AAHVAAN'26</title>
+    <meta name="description" content="Register for AAHVAAN'26 - DTU's epic sports festival.">
+
+    <link rel="icon" type="image/x-icon"
+        href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>⚔️</text></svg>">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/mahabharata-theme.css">
+    <link rel="stylesheet" href="css/sections.css">
+    <link rel="stylesheet" href="css/responsive.css">
+
+    <style>
+        .register-hero {
+            min-height: 40vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: var(--space-20) var(--space-4);
+            background:
+                radial-gradient(ellipse at 50% 100%, rgba(212, 175, 55, 0.1) 0%, transparent 50%),
+                radial-gradient(ellipse at 30% 50%, rgba(139, 0, 0, 0.1) 0%, transparent 40%),
+                var(--dark-600);
+        }
+
+        .register-hero-title {
+            font-family: var(--font-display);
+            font-size: clamp(var(--font-size-4xl), 8vw, var(--font-size-6xl));
+            background: var(--gradient-gold);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: var(--space-2);
+        }
+
+        .register-hero-sanskrit {
+            font-family: var(--font-hindi);
+            font-size: var(--font-size-2xl);
+            color: var(--fire-500);
+            margin-bottom: var(--space-4);
+        }
+
+        .register-hero-subtitle {
+            font-family: var(--font-body);
+            font-size: var(--font-size-lg);
+            color: var(--color-text-secondary);
+            max-width: 600px;
+        }
+
+        .register-content {
+            background: var(--dark-700);
+            padding: var(--space-16) var(--space-4);
+        }
+
+        .register-container {
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        .register-form {
+            background: var(--dark-400);
+            border: 1px solid var(--color-border-subtle);
+            border-radius: var(--radius-lg);
+            padding: var(--space-10);
+        }
+
+        .form-section {
+            margin-bottom: var(--space-8);
+        }
+
+        .form-section-title {
+            font-family: var(--font-display);
+            font-size: var(--font-size-lg);
+            color: var(--gold-500);
+            margin-bottom: var(--space-4);
+            padding-bottom: var(--space-2);
+            border-bottom: 1px solid var(--color-border-subtle);
+        }
+
+        .form-group {
+            margin-bottom: var(--space-5);
+        }
+
+        .form-label {
+            display: block;
+            font-family: var(--font-heading);
+            font-size: var(--font-size-sm);
+            font-weight: var(--font-weight-medium);
+            color: var(--color-text);
+            margin-bottom: var(--space-2);
+        }
+
+        .form-label .required {
+            color: var(--fire-500);
+        }
+
+        .form-input,
+        .form-select,
+        .form-textarea {
+            width: 100%;
+            padding: var(--space-3) var(--space-4);
+            font-family: var(--font-body);
+            font-size: var(--font-size-base);
+            color: var(--color-text);
+            background: var(--dark-300);
+            border: 1px solid var(--color-border-subtle);
+            border-radius: var(--radius-md);
+            transition: all var(--transition-base);
+        }
+
+        .form-input:focus,
+        .form-select:focus,
+        .form-textarea:focus {
+            outline: none;
+            border-color: var(--gold-500);
+            box-shadow: 0 0 0 3px rgba(212, 175, 55, 0.1);
+        }
+
+        .form-input::placeholder {
+            color: var(--color-text-muted);
+        }
+
+        .form-select {
+            cursor: pointer;
+            appearance: none;
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='%23D4AF37' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'%3E%3C/polyline%3E%3C/svg%3E");
+            background-repeat: no-repeat;
+            background-position: right 12px center;
+            background-size: 16px;
+            padding-right: var(--space-10);
+        }
+
+        .form-select option {
+            background: var(--dark-400);
+            color: var(--color-text);
+        }
+
+        .form-textarea {
+            min-height: 120px;
+            resize: vertical;
+        }
+
+        .form-row {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: var(--space-4);
+        }
+
+        .form-checkbox-group {
+            display: flex;
+            align-items: flex-start;
+            gap: var(--space-3);
+            padding: var(--space-4);
+            background: var(--dark-300);
+            border-radius: var(--radius-md);
+            cursor: pointer;
+        }
+
+        .form-checkbox-group input[type="checkbox"] {
+            width: 20px;
+            height: 20px;
+            accent-color: var(--gold-500);
+            flex-shrink: 0;
+            margin-top: 2px;
+        }
+
+        .form-checkbox-label {
+            font-family: var(--font-body);
+            font-size: var(--font-size-sm);
+            color: var(--color-text-secondary);
+            line-height: 1.5;
+        }
+
+        .form-submit {
+            width: 100%;
+            padding: var(--space-4);
+            font-family: var(--font-heading);
+            font-size: var(--font-size-lg);
+            font-weight: var(--font-weight-bold);
+            color: var(--dark-700);
+            background: var(--gradient-gold);
+            border: none;
+            border-radius: var(--radius-md);
+            cursor: pointer;
+            transition: all var(--transition-base);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: var(--space-2);
+        }
+
+        .form-submit:hover {
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-gold);
+        }
+
+        .form-note {
+            margin-top: var(--space-6);
+            padding: var(--space-4);
+            background: rgba(212, 175, 55, 0.1);
+            border: 1px solid rgba(212, 175, 55, 0.3);
+            border-radius: var(--radius-md);
+            font-family: var(--font-body);
+            font-size: var(--font-size-sm);
+            color: var(--color-text-secondary);
+            text-align: center;
+        }
+
+        .back-link {
+            display: inline-flex;
+            align-items: center;
+            gap: var(--space-2);
+            font-family: var(--font-heading);
+            font-size: var(--font-size-sm);
+            color: var(--gold-500);
+            text-decoration: none;
+            margin-bottom: var(--space-8);
+            transition: color var(--transition-base);
+        }
+
+        .back-link:hover {
+            color: var(--gold-400);
+        }
+
+        @media (max-width: 640px) {
+            .form-row {
+                grid-template-columns: 1fr;
+            }
+
+            .register-form {
+                padding: var(--space-6);
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <nav class="nav" id="nav">
+        <div class="left">
+            <a href="index.html"
+                style="font-family: var(--font-display); font-size: 1.5rem; color: var(--gold-500); filter: var(--glow-gold); text-decoration: none;">AAHVAAN'26</a>
+        </div>
+        <div class="right">
+            <a class="nav-link" href="index.html">Home</a>
+            <a class="nav-link" href="events.html">Events</a>
+            <a class="nav-link" href="index.html#about">About</a>
+            <a class="nav-link" href="index.html#contact">Contact</a>
+        </div>
+    </nav>
+
+    <section class="register-hero">
+        <div class="register-hero-sanskrit">सेना पञ्जीकरण</div>
+        <h1 class="register-hero-title">JOIN THE WAR</h1>
+        <p class="register-hero-subtitle">Register your team and prepare for battle at AAHVAAN'26. The battlefield
+            awaits!</p>
+    </section>
+
+    <section class="register-content">
+        <div class="register-container">
+            <a href="index.html" class="back-link">
+                <i class="fas fa-arrow-left"></i> Back to Home
+            </a>
+
+            <form class="register-form" id="registrationForm">
+
+                <div class="form-section">
+                    <h2 class="form-section-title">⚔️ Team Information</h2>
+
+                    <div class="form-group">
+                        <label class="form-label">
+                            Team Name <span class="required">*</span>
+                        </label>
+                        <input type="text" class="form-input" name="teamName" placeholder="Enter your team name"
+                            required>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="form-label">
+                            College/University <span class="required">*</span>
+                        </label>
+                        <input type="text" class="form-input" name="college" placeholder="Enter your college name"
+                            required>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="form-label">
+                            Select Event <span class="required">*</span>
+                        </label>
+                        <select class="form-select" name="event" id="eventSelect" required>
+                            <option value="">Choose your battlefield</option>
+                            <option value="football">⚽ Football - Chakravyuh (₹2,000)</option>
+                            <option value="basketball">🏀 Basketball - Gada Yuddh (₹1,500)</option>
+                            <option value="cricket">🏏 Cricket - Gandiva Strike (₹2,500)</option>
+                            <option value="volleyball">🏐 Volleyball - Sudarshana (₹1,200)</option>
+                            <option value="badminton">🏸 Badminton - Shakti Astra (₹500/₹800)</option>
+                            <option value="swimming">🏊 Swimming - Varuna's Domain (₹300/₹1,000)</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="form-section">
+                    <h2 class="form-section-title">👤 Captain Details</h2>
+
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label class="form-label">
+                                Captain Name <span class="required">*</span>
+                            </label>
+                            <input type="text" class="form-input" name="captainName" placeholder="Full name" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="form-label">
+                                Phone Number <span class="required">*</span>
+                            </label>
+                            <input type="tel" class="form-input" name="captainPhone" placeholder="+91 98765 43210"
+                                required>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="form-label">
+                            Email Address <span class="required">*</span>
+                        </label>
+                        <input type="email" class="form-input" name="captainEmail" placeholder="captain@email.com"
+                            required>
+                    </div>
+                </div>
+
+                <div class="form-section">
+                    <h2 class="form-section-title">📋 Team Members</h2>
+
+                    <div class="form-group">
+                        <label class="form-label">
+                            Team Member Names
+                        </label>
+                        <textarea class="form-textarea" name="teamMembers"
+                            placeholder="Enter team member names (one per line)&#10;Example:&#10;Arjun Sharma&#10;Bheem Singh&#10;Nakul Verma"></textarea>
+                    </div>
+                </div>
+
+                <div class="form-section">
+                    <h2 class="form-section-title">✅ Agreement</h2>
+
+                    <label class="form-checkbox-group">
+                        <input type="checkbox" name="agreeRules" required>
+                        <span class="form-checkbox-label">
+                            I confirm that all team members are bonafide students of the mentioned institution and agree
+                            to abide by the rules and regulations of AAHVAAN'26.
+                        </span>
+                    </label>
+                </div>
+
+                <button type="submit" class="form-submit">
+                    <span>⚔️</span> Submit Registration
+                </button>
+
+                <div class="form-note">
+                    <strong>Note:</strong> Registration deadline is March 10, 2026. Entry fees to be paid at the venue
+                    on Day 1.
+                    For queries, contact <a href="mailto:info@aahvaan.in"
+                        style="color: var(--gold-500);">info@aahvaan.in</a>
+                </div>
+            </form>
+        </div>
+    </section>
+
+    <footer>
+        <div class="footer-quote">
+            <div class="footer-quote-sanskrit">धर्मो रक्षति रक्षितः</div>
+            <div class="footer-quote-english">"Dharma protects those who protect it"</div>
+        </div>
+        <div class="love">Made with <i class="fa fa-heart"></i> by DTU Tech Warriors</div>
+    </footer>
+
+    <script>
+        // Pre-select event from URL parameter
+        document.addEventListener('DOMContentLoaded', function () {
+            const urlParams = new URLSearchParams(window.location.search);
+            const eventParam = urlParams.get('event');
+            if (eventParam) {
+                const eventSelect = document.getElementById('eventSelect');
+                if (eventSelect) {
+                    eventSelect.value = eventParam;
+                }
+            }
+        });
+
+        // Form submission handler
+        document.getElementById('registrationForm').addEventListener('submit', function (e) {
+            e.preventDefault();
+
+            // Get form data
+            const formData = new FormData(this);
+            const data = Object.fromEntries(formData.entries());
+
+            // Show success message (in production, this would send to a server)
+            alert('🎉 Registration Submitted!\n\nTeam: ' + data.teamName + '\nEvent: ' + data.event + '\n\nYou will receive a confirmation email shortly.');
+
+            // Reset form
+            this.reset();
+        });
+    </script>
+
+    <script src="js/main.js"></script>
+</body>
+
+</html>

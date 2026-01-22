@@ -1,0 +1,794 @@
+/* ====================================
+   AAHVAAN'26 - HERO SECTION
+   Kurukshetra Battlefield Experience
+   ==================================== */
+
+/* ========================================
+   HERO CONTAINER
+   ======================================== */
+.home-page {
+  position: relative;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  background: var(--dark-700);
+}
+
+/* ========================================
+   PARALLAX BACKGROUND LAYERS
+   ======================================== */
+
+/* Base battlefield gradient */
+.bgMain {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background:
+    /* Top dark gradient */
+    linear-gradient(180deg,
+      rgba(10, 10, 10, 0.95) 0%,
+      transparent 30%),
+    /* Bottom smoke gradient */
+    linear-gradient(0deg,
+      rgba(10, 10, 10, 0.98) 0%,
+      rgba(10, 10, 10, 0.7) 15%,
+      transparent 40%),
+    /* War fire glow - left */
+    radial-gradient(ellipse at 10% 80%,
+      rgba(255, 69, 0, 0.15) 0%,
+      transparent 50%),
+    /* War fire glow - right */
+    radial-gradient(ellipse at 90% 85%,
+      rgba(255, 69, 0, 0.15) 0%,
+      transparent 50%),
+    /* Blood moon glow */
+    radial-gradient(ellipse at 50% 20%,
+      rgba(139, 0, 0, 0.2) 0%,
+      transparent 40%),
+    /* Base dark */
+    var(--dark-700);
+  z-index: 1;
+}
+
+/* Animated dust/smoke overlay */
+.bgMain::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 200%;
+  height: 100%;
+  background:
+    url("data:image/svg+xml,%3Csvg viewBox='0 0 400 400' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+  opacity: 0.03;
+  animation: dustDrift 20s linear infinite;
+}
+
+@keyframes dustDrift {
+  0% {
+    transform: translateX(0);
+  }
+
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+/* Battlefield silhouette layer */
+.bgMain::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 40%;
+  background:
+    /* Army silhouettes - very subtle */
+    linear-gradient(180deg,
+      transparent 0%,
+      rgba(10, 10, 10, 0.3) 30%,
+      rgba(10, 10, 10, 0.8) 70%,
+      var(--dark-700) 100%);
+  z-index: 2;
+}
+
+/* Phone background */
+.phoneBgMain {
+  display: none;
+}
+
+/* ========================================
+   WARRIOR SILHOUETTES
+   ======================================== */
+.warriors-container {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 60%;
+  z-index: 3;
+  pointer-events: none;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  padding: 0 5%;
+}
+
+.warrior-left,
+.warrior-right {
+  height: 80%;
+  max-height: 500px;
+  opacity: 0.4;
+  filter: brightness(0) drop-shadow(0 0 30px rgba(212, 175, 55, 0.2));
+  animation: warriorIdle 4s ease-in-out infinite;
+}
+
+.warrior-left {
+  transform: scaleX(1);
+  animation-delay: 0s;
+}
+
+.warrior-right {
+  transform: scaleX(-1);
+  animation-delay: 2s;
+}
+
+/* ========================================
+   DECORATIVE LINES (War Banners)
+   ======================================== */
+.lines {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 4;
+  overflow: hidden;
+}
+
+.line {
+  position: absolute;
+  width: 1px;
+  height: 100%;
+  background: linear-gradient(180deg,
+      transparent 0%,
+      rgba(212, 175, 55, 0.1) 20%,
+      rgba(212, 175, 55, 0.2) 50%,
+      rgba(212, 175, 55, 0.1) 80%,
+      transparent 100%);
+  opacity: 0.5;
+}
+
+#l1 {
+  left: 5%;
+  animation: lineFlicker 8s ease-in-out infinite;
+}
+
+#l2 {
+  left: 15%;
+  animation: lineFlicker 10s ease-in-out infinite 1s;
+}
+
+#l3 {
+  left: 25%;
+  animation: lineFlicker 7s ease-in-out infinite 2s;
+}
+
+#l4 {
+  left: 35%;
+  animation: lineFlicker 9s ease-in-out infinite 0.5s;
+}
+
+#l5 {
+  left: 45%;
+  animation: lineFlicker 11s ease-in-out infinite 1.5s;
+}
+
+#l6 {
+  left: 55%;
+  animation: lineFlicker 8s ease-in-out infinite 3s;
+}
+
+#l7 {
+  left: 65%;
+  animation: lineFlicker 10s ease-in-out infinite 0.8s;
+}
+
+#l8 {
+  left: 75%;
+  animation: lineFlicker 9s ease-in-out infinite 2.5s;
+}
+
+#l9 {
+  left: 85%;
+  animation: lineFlicker 7s ease-in-out infinite 1.2s;
+}
+
+#l10 {
+  left: 95%;
+  animation: lineFlicker 12s ease-in-out infinite 4s;
+}
+
+@keyframes lineFlicker {
+
+  0%,
+  100% {
+    opacity: 0.3;
+  }
+
+  50% {
+    opacity: 0.6;
+  }
+}
+
+/* ========================================
+   HERO LOGO & TEXT
+   ======================================== */
+.text {
+  position: relative;
+  z-index: 20;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  margin-bottom: var(--space-8);
+}
+
+/* Main AAHVAAN Logo */
+#aahvahan-main {
+  width: clamp(280px, 50vw, 500px);
+  height: auto;
+  filter: var(--glow-gold);
+  animation: logoBreath 4s ease-in-out infinite;
+}
+
+/* If using text fallback instead of image */
+.hero-title {
+  font-family: var(--font-display);
+  font-size: clamp(var(--font-size-5xl), 12vw, var(--font-size-8xl));
+  font-weight: var(--font-weight-black);
+  background: var(--gradient-gold);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  letter-spacing: 0.1em;
+  text-shadow: none;
+  filter: var(--glow-gold);
+  animation: logoBreath 4s ease-in-out infinite;
+  margin-bottom: var(--space-2);
+}
+
+.hero-year {
+  font-family: var(--font-display);
+  font-size: clamp(var(--font-size-2xl), 5vw, var(--font-size-4xl));
+  font-weight: var(--font-weight-bold);
+  color: var(--gold-400);
+  letter-spacing: 0.4em;
+  margin-top: -10px;
+}
+
+@keyframes logoBreath {
+
+  0%,
+  100% {
+    filter: var(--glow-gold) brightness(1);
+    transform: scale(1);
+  }
+
+  50% {
+    filter: var(--glow-gold) brightness(1.15);
+    transform: scale(1.02);
+  }
+}
+
+/* Tagline */
+#tagline,
+.hero-tagline {
+  margin-top: var(--space-4);
+}
+
+.hero-tagline-sanskrit {
+  font-family: var(--font-hindi);
+  font-size: clamp(var(--font-size-lg), 3vw, var(--font-size-2xl));
+  color: var(--fire-500);
+  text-shadow: 0 0 20px rgba(255, 107, 53, 0.4);
+  margin-bottom: var(--space-2);
+}
+
+.hero-tagline-english {
+  font-family: var(--font-heading);
+  font-size: var(--font-size-sm);
+  color: var(--color-text-secondary);
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+}
+
+/* ========================================
+   COUNTDOWN TIMER
+   ======================================== */
+.time {
+  position: relative;
+  z-index: 20;
+  margin-bottom: var(--space-8);
+}
+
+.numbers {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-2);
+}
+
+.numbers>div {
+  font-family: var(--font-display);
+  font-size: clamp(var(--font-size-3xl), 8vw, var(--font-size-6xl));
+  font-weight: var(--font-weight-bold);
+  color: var(--gold-500);
+  text-shadow: 0 0 30px rgba(212, 175, 55, 0.4);
+  min-width: 80px;
+  text-align: center;
+  position: relative;
+}
+
+.numbers>div::after {
+  content: '';
+  position: absolute;
+  bottom: -5px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 40px;
+  height: 2px;
+  background: var(--gradient-gold);
+  opacity: 0.5;
+}
+
+.numbers span {
+  font-family: var(--font-display);
+  font-size: clamp(var(--font-size-2xl), 6vw, var(--font-size-4xl));
+  color: var(--fire-500);
+  margin: 0 var(--space-1);
+  animation: colonPulse 1s ease-in-out infinite;
+}
+
+@keyframes colonPulse {
+
+  0%,
+  100% {
+    opacity: 1;
+  }
+
+  50% {
+    opacity: 0.3;
+  }
+}
+
+.labels {
+  display: flex;
+  justify-content: center;
+  gap: var(--space-4);
+  margin-top: var(--space-3);
+}
+
+.labels>div {
+  font-family: var(--font-heading);
+  font-size: var(--font-size-xs);
+  color: var(--color-text-muted);
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  min-width: 80px;
+  text-align: center;
+}
+
+/* Lightning effect on timer */
+.timer-lightning {
+  position: absolute;
+  top: -50px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 2px;
+  height: 60px;
+  background: linear-gradient(180deg, transparent, var(--gold-300), transparent);
+  opacity: 0;
+  animation: lightningFlash 5s ease infinite;
+}
+
+/* ========================================
+   FLOATING ATHLETES / WARRIORS
+   ======================================== */
+.pictures {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 5;
+  pointer-events: none;
+}
+
+.leftImg,
+.centerImg,
+.rightImg {
+  position: absolute;
+  bottom: 5%;
+}
+
+.leftImg {
+  left: 5%;
+}
+
+.centerImg {
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.rightImg {
+  right: 5%;
+}
+
+.player {
+  max-height: 400px;
+  width: auto;
+  filter: brightness(0.9) contrast(1.1);
+  animation: warriorIdle 3s ease-in-out infinite;
+}
+
+.light {
+  position: absolute;
+  bottom: 0;
+  width: 200%;
+  height: 200px;
+  opacity: 0.3;
+  filter: blur(30px);
+}
+
+#lightRed {
+  background: radial-gradient(ellipse, var(--crimson-500), transparent);
+}
+
+#lightBlue {
+  background: radial-gradient(ellipse, var(--gold-500), transparent);
+}
+
+#lightYellow {
+  background: radial-gradient(ellipse, var(--fire-500), transparent);
+}
+
+/* ========================================
+   REGISTER BUTTON
+   ======================================== */
+.regist,
+#desktopRegist,
+#phoneRegist {
+  position: relative;
+  z-index: 25;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-2);
+  padding: var(--space-4) var(--space-8);
+  font-family: var(--font-heading);
+  font-size: var(--font-size-base);
+  font-weight: var(--font-weight-bold);
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  color: var(--dark-700);
+  background: var(--gradient-gold);
+  border: none;
+  border-radius: var(--radius-sm);
+  cursor: pointer;
+  overflow: hidden;
+  transition: all var(--transition-base);
+  box-shadow: var(--shadow-gold);
+  text-decoration: none;
+}
+
+.regist::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.4), transparent);
+  transition: left 0.6s ease;
+}
+
+.regist:hover {
+  transform: translateY(-3px) scale(1.02);
+  box-shadow: var(--shadow-gold-strong);
+  color: var(--dark-700);
+}
+
+.regist:hover::before {
+  left: 100%;
+}
+
+.regist:active {
+  transform: translateY(-1px) scale(1);
+}
+
+/* ========================================
+   SOCIAL ICONS
+   ======================================== */
+.socials {
+  position: absolute;
+  bottom: var(--space-8);
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 25;
+  display: flex;
+  gap: var(--space-4);
+}
+
+.socials a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  color: var(--gold-500);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-full);
+  font-size: var(--font-size-lg);
+  transition: all var(--transition-base);
+}
+
+.socials a:hover {
+  color: var(--dark-700);
+  background: var(--gold-500);
+  border-color: var(--gold-500);
+  box-shadow: var(--shadow-gold);
+  transform: translateY(-3px);
+}
+
+/* ========================================
+   ARROW RAIN EFFECT
+   ======================================== */
+.arrow-rain {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 6;
+  pointer-events: none;
+  overflow: hidden;
+  opacity: 0.15;
+}
+
+.arrow-rain .arrow {
+  position: absolute;
+  width: 50px;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, var(--gold-400), var(--gold-300));
+  transform: rotate(45deg);
+  animation: arrowFall 4s linear infinite;
+}
+
+.arrow-rain .arrow::before {
+  content: '';
+  position: absolute;
+  right: 0;
+  top: -4px;
+  border: 5px solid transparent;
+  border-left: 10px solid var(--gold-300);
+}
+
+/* Generate multiple arrows */
+.arrow-rain .arrow:nth-child(1) {
+  left: 5%;
+  animation-delay: 0s;
+  animation-duration: 3s;
+}
+
+.arrow-rain .arrow:nth-child(2) {
+  left: 15%;
+  animation-delay: 0.5s;
+  animation-duration: 4s;
+}
+
+.arrow-rain .arrow:nth-child(3) {
+  left: 25%;
+  animation-delay: 1s;
+  animation-duration: 3.5s;
+}
+
+.arrow-rain .arrow:nth-child(4) {
+  left: 35%;
+  animation-delay: 1.5s;
+  animation-duration: 4.5s;
+}
+
+.arrow-rain .arrow:nth-child(5) {
+  left: 45%;
+  animation-delay: 0.3s;
+  animation-duration: 3.2s;
+}
+
+.arrow-rain .arrow:nth-child(6) {
+  left: 55%;
+  animation-delay: 2s;
+  animation-duration: 4.2s;
+}
+
+.arrow-rain .arrow:nth-child(7) {
+  left: 65%;
+  animation-delay: 0.8s;
+  animation-duration: 3.8s;
+}
+
+.arrow-rain .arrow:nth-child(8) {
+  left: 75%;
+  animation-delay: 1.3s;
+  animation-duration: 4.8s;
+}
+
+.arrow-rain .arrow:nth-child(9) {
+  left: 85%;
+  animation-delay: 0.2s;
+  animation-duration: 3.3s;
+}
+
+.arrow-rain .arrow:nth-child(10) {
+  left: 95%;
+  animation-delay: 1.8s;
+  animation-duration: 4.3s;
+}
+
+/* ========================================
+   EMBER PARTICLES
+   ======================================== */
+.ember-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 7;
+  pointer-events: none;
+  overflow: hidden;
+}
+
+/* ========================================
+   SCROLL INDICATOR
+   ======================================== */
+.scroll-indicator {
+  position: absolute;
+  bottom: var(--space-20);
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 25;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-2);
+  animation: bounceDown 2s ease-in-out infinite;
+}
+
+.scroll-indicator span {
+  font-family: var(--font-heading);
+  font-size: var(--font-size-xs);
+  color: var(--color-text-muted);
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+}
+
+.scroll-indicator i {
+  color: var(--gold-500);
+  font-size: var(--font-size-lg);
+}
+
+@keyframes bounceDown {
+
+  0%,
+  100% {
+    transform: translateX(-50%) translateY(0);
+  }
+
+  50% {
+    transform: translateX(-50%) translateY(10px);
+  }
+}
+
+/* ========================================
+   RESPONSIVE
+   ======================================== */
+@media (max-width: 1024px) {
+
+  .warrior-left,
+  .warrior-right {
+    height: 60%;
+    opacity: 0.3;
+  }
+
+  .numbers>div {
+    min-width: 60px;
+  }
+
+  .labels>div {
+    min-width: 60px;
+  }
+}
+
+@media (max-width: 768px) {
+  .home-page {
+    padding: var(--space-16) var(--space-4);
+  }
+
+  .warriors-container {
+    display: none;
+  }
+
+  .lines {
+    opacity: 0.3;
+  }
+
+  .numbers>div {
+    min-width: 50px;
+    font-size: var(--font-size-3xl);
+  }
+
+  .numbers>div::after {
+    width: 30px;
+  }
+
+  .labels>div {
+    min-width: 50px;
+    font-size: 10px;
+  }
+
+  .arrow-rain {
+    display: none;
+  }
+
+  .socials {
+    bottom: var(--space-4);
+  }
+
+  .scroll-indicator {
+    display: none;
+  }
+
+  .phoneBgMain {
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: var(--gradient-battlefield);
+    z-index: 1;
+  }
+}
+
+@media (max-width: 480px) {
+  .numbers {
+    gap: var(--space-1);
+  }
+
+  .numbers>div {
+    min-width: 40px;
+    font-size: var(--font-size-2xl);
+  }
+
+  .labels {
+    gap: var(--space-2);
+  }
+
+  .labels>div {
+    min-width: 40px;
+    font-size: 8px;
+    letter-spacing: 0.05em;
+  }
+
+  .regist {
+    padding: var(--space-3) var(--space-6);
+    font-size: var(--font-size-sm);
+  }
+}

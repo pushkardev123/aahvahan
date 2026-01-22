@@ -1,0 +1,600 @@
+/* ====================================
+   AAHVAAN'26 - EPIC LOADER
+   Kurukshetra Battlefield Entrance
+   ==================================== */
+
+/* ========================================
+   LOADER CONTAINER
+   ======================================== */
+.loader {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: var(--dark-700);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: var(--z-loader);
+  cursor: pointer;
+  overflow: hidden;
+}
+
+.loader.hidden {
+  pointer-events: none;
+  opacity: 0;
+  visibility: hidden;
+}
+
+/* Battlefield Background Layer */
+.loader::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background:
+    radial-gradient(ellipse at 50% 120%, rgba(139, 0, 0, 0.15) 0%, transparent 60%),
+    radial-gradient(ellipse at 20% 80%, rgba(255, 69, 0, 0.1) 0%, transparent 40%),
+    radial-gradient(ellipse at 80% 80%, rgba(255, 69, 0, 0.1) 0%, transparent 40%),
+    linear-gradient(180deg, var(--dark-700) 0%, var(--dark-600) 50%, var(--dark-700) 100%);
+  z-index: 0;
+}
+
+/* Animated Smoke/Dust Layer */
+.loader::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 40%;
+  background:
+    linear-gradient(180deg,
+      transparent 0%,
+      rgba(26, 26, 26, 0.3) 30%,
+      rgba(139, 0, 0, 0.05) 60%,
+      rgba(10, 10, 10, 0.8) 100%);
+  z-index: 1;
+  animation: smokeDrift 8s ease-in-out infinite;
+}
+
+/* ========================================
+   LOADER CONTENT
+   ======================================== */
+.loader-content {
+  position: relative;
+  z-index: 10;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: var(--space-8);
+}
+
+/* ========================================
+   SHANKH (CONCH) ANIMATION
+   ======================================== */
+.loader-shankh {
+  width: 120px;
+  height: 120px;
+  margin-bottom: var(--space-8);
+  position: relative;
+  animation: shankahPulse 2s ease-in-out infinite;
+}
+
+.loader-shankh::before {
+  content: '🐚';
+  font-size: 80px;
+  filter: var(--glow-gold) sepia(1) saturate(3) hue-rotate(10deg);
+  animation: shankahBlow 3s ease-in-out infinite;
+}
+
+/* Sound waves emanating from shankh */
+.loader-shankh::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 100%;
+  height: 100%;
+  border: 2px solid var(--gold-500);
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+  animation: soundWave 2s ease-out infinite;
+  opacity: 0;
+}
+
+@keyframes shankahPulse {
+
+  0%,
+  100% {
+    transform: scale(1);
+  }
+
+  50% {
+    transform: scale(1.05);
+  }
+}
+
+@keyframes shankahBlow {
+
+  0%,
+  100% {
+    transform: rotate(-5deg);
+  }
+
+  50% {
+    transform: rotate(5deg);
+  }
+}
+
+@keyframes soundWave {
+  0% {
+    width: 100%;
+    height: 100%;
+    opacity: 0.8;
+  }
+
+  100% {
+    width: 300%;
+    height: 300%;
+    opacity: 0;
+  }
+}
+
+/* ========================================
+   MANDALA SPINNER
+   ======================================== */
+.loader-mandala {
+  width: 200px;
+  height: 200px;
+  position: relative;
+  margin-bottom: var(--space-6);
+}
+
+.mandala-ring {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border-radius: 50%;
+  border: 2px solid transparent;
+}
+
+.mandala-ring-1 {
+  width: 200px;
+  height: 200px;
+  border-color: var(--gold-500);
+  border-top-color: transparent;
+  animation: rotateSlow 4s linear infinite;
+}
+
+.mandala-ring-2 {
+  width: 160px;
+  height: 160px;
+  border-color: var(--gold-400);
+  border-bottom-color: transparent;
+  animation: rotateSlow 3s linear infinite reverse;
+}
+
+.mandala-ring-3 {
+  width: 120px;
+  height: 120px;
+  border-color: var(--gold-300);
+  border-left-color: transparent;
+  animation: rotateSlow 2s linear infinite;
+}
+
+/* Center Om Symbol */
+.mandala-center {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-family: var(--font-hindi);
+  font-size: var(--font-size-4xl);
+  color: var(--gold-500);
+  text-shadow: 0 0 20px rgba(212, 175, 55, 0.6);
+  animation: goldenPulse 2s ease-in-out infinite;
+}
+
+/* ========================================
+   LOGO
+   ======================================== */
+.loader-logo {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-2);
+  margin-bottom: var(--space-6);
+}
+
+.loader-text {
+  font-family: var(--font-display);
+  font-size: clamp(var(--font-size-4xl), 8vw, var(--font-size-7xl));
+  font-weight: var(--font-weight-black);
+  background: var(--gradient-gold);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  text-shadow: none;
+  letter-spacing: 0.15em;
+  filter: var(--glow-gold);
+  animation: textShine 3s ease-in-out infinite;
+}
+
+.loader-year {
+  font-family: var(--font-display);
+  font-size: clamp(var(--font-size-2xl), 4vw, var(--font-size-4xl));
+  font-weight: var(--font-weight-bold);
+  color: var(--gold-400);
+  letter-spacing: 0.3em;
+  margin-top: -10px;
+}
+
+@keyframes textShine {
+
+  0%,
+  100% {
+    filter: var(--glow-gold) brightness(1);
+  }
+
+  50% {
+    filter: var(--glow-gold) brightness(1.2);
+  }
+}
+
+/* ========================================
+   SANSKRIT TAGLINE
+   ======================================== */
+.loader-tagline {
+  font-family: var(--font-hindi);
+  font-size: var(--font-size-xl);
+  color: var(--fire-500);
+  margin-bottom: var(--space-8);
+  opacity: 0;
+  animation: fadeInUp 1s ease-out 0.5s forwards;
+  text-shadow: 0 0 20px rgba(255, 107, 53, 0.4);
+}
+
+.loader-tagline-english {
+  font-family: var(--font-heading);
+  font-size: var(--font-size-sm);
+  color: var(--color-text-secondary);
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  margin-top: var(--space-2);
+}
+
+/* ========================================
+   PROGRESS BAR
+   ======================================== */
+.loader-bar {
+  width: 300px;
+  max-width: 80vw;
+  height: 4px;
+  background: var(--dark-400);
+  border-radius: var(--radius-full);
+  overflow: hidden;
+  position: relative;
+  margin-bottom: var(--space-6);
+}
+
+.loader-bar::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  border: 1px solid var(--color-border-subtle);
+  border-radius: inherit;
+}
+
+.loader-progress {
+  height: 100%;
+  width: 0%;
+  background: var(--gradient-gold);
+  border-radius: var(--radius-full);
+  transition: width 0.3s ease;
+  position: relative;
+  box-shadow: 0 0 10px rgba(212, 175, 55, 0.5);
+}
+
+.loader-progress::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 20px;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.4));
+  animation: shimmer 1s linear infinite;
+}
+
+/* ========================================
+   CLICK TO ENTER
+   ======================================== */
+.loader-click {
+  font-family: var(--font-heading);
+  font-size: var(--font-size-sm);
+  color: var(--gold-500);
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  opacity: 0;
+  animation: pulseAppear 0.5s ease-out 2s forwards, goldenPulse 2s ease-in-out 2.5s infinite;
+  cursor: pointer;
+  padding: var(--space-3) var(--space-6);
+  border: 1px solid var(--gold-500);
+  border-radius: var(--radius-sm);
+  transition: all var(--transition-base);
+}
+
+.loader-click:hover {
+  background: var(--gold-500);
+  color: var(--dark-700);
+  box-shadow: var(--shadow-gold-strong);
+}
+
+@keyframes pulseAppear {
+  0% {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ========================================
+   WAR DRUMS QUOTE
+   ======================================== */
+.loader-quote {
+  position: absolute;
+  bottom: var(--space-8);
+  left: 50%;
+  transform: translateX(-50%);
+  text-align: center;
+  opacity: 0;
+  animation: fadeInUp 1s ease-out 1.5s forwards;
+}
+
+.loader-quote-sanskrit {
+  font-family: var(--font-hindi);
+  font-size: var(--font-size-lg);
+  color: var(--gold-400);
+  margin-bottom: var(--space-2);
+}
+
+.loader-quote-english {
+  font-family: var(--font-body);
+  font-size: var(--font-size-sm);
+  color: var(--color-text-muted);
+  font-style: italic;
+}
+
+/* ========================================
+   LOADER PARTICLES (EMBERS)
+   ======================================== */
+.loader-particles {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 5;
+  overflow: hidden;
+}
+
+.loader-ember {
+  position: absolute;
+  width: 3px;
+  height: 3px;
+  background: var(--ember);
+  border-radius: 50%;
+  box-shadow: 0 0 6px var(--ember), 0 0 12px rgba(255, 69, 0, 0.4);
+  animation: emberFloat linear infinite;
+}
+
+/* Generate multiple embers with different positions and timings */
+.loader-ember:nth-child(1) {
+  left: 10%;
+  animation-duration: 8s;
+  animation-delay: 0s;
+}
+
+.loader-ember:nth-child(2) {
+  left: 20%;
+  animation-duration: 10s;
+  animation-delay: 1s;
+}
+
+.loader-ember:nth-child(3) {
+  left: 30%;
+  animation-duration: 7s;
+  animation-delay: 2s;
+}
+
+.loader-ember:nth-child(4) {
+  left: 40%;
+  animation-duration: 9s;
+  animation-delay: 0.5s;
+}
+
+.loader-ember:nth-child(5) {
+  left: 50%;
+  animation-duration: 11s;
+  animation-delay: 1.5s;
+}
+
+.loader-ember:nth-child(6) {
+  left: 60%;
+  animation-duration: 8s;
+  animation-delay: 3s;
+}
+
+.loader-ember:nth-child(7) {
+  left: 70%;
+  animation-duration: 10s;
+  animation-delay: 0.8s;
+}
+
+.loader-ember:nth-child(8) {
+  left: 80%;
+  animation-duration: 9s;
+  animation-delay: 2.5s;
+}
+
+.loader-ember:nth-child(9) {
+  left: 90%;
+  animation-duration: 7s;
+  animation-delay: 1.2s;
+}
+
+.loader-ember:nth-child(10) {
+  left: 15%;
+  animation-duration: 12s;
+  animation-delay: 4s;
+}
+
+.loader-ember:nth-child(11) {
+  left: 35%;
+  animation-duration: 8s;
+  animation-delay: 3.5s;
+}
+
+.loader-ember:nth-child(12) {
+  left: 55%;
+  animation-duration: 10s;
+  animation-delay: 2.2s;
+}
+
+.loader-ember:nth-child(13) {
+  left: 75%;
+  animation-duration: 9s;
+  animation-delay: 1.8s;
+}
+
+.loader-ember:nth-child(14) {
+  left: 85%;
+  animation-duration: 11s;
+  animation-delay: 0.3s;
+}
+
+.loader-ember:nth-child(15) {
+  left: 25%;
+  animation-duration: 7s;
+  animation-delay: 4.5s;
+}
+
+/* ========================================
+   LOADER EXIT ANIMATION
+   ======================================== */
+.loader.exiting {
+  animation: loaderExit 1.5s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+.loader.exiting .loader-content {
+  animation: contentExit 0.8s ease-in forwards;
+}
+
+@keyframes loaderExit {
+  0% {
+    clip-path: circle(150% at 50% 50%);
+  }
+
+  100% {
+    clip-path: circle(0% at 50% 50%);
+  }
+}
+
+@keyframes contentExit {
+  0% {
+    opacity: 1;
+    transform: scale(1);
+  }
+
+  100% {
+    opacity: 0;
+    transform: scale(1.1);
+  }
+}
+
+/* ========================================
+   RESPONSIVE ADJUSTMENTS
+   ======================================== */
+@media (max-width: 768px) {
+  .loader-mandala {
+    width: 150px;
+    height: 150px;
+  }
+
+  .mandala-ring-1 {
+    width: 150px;
+    height: 150px;
+  }
+
+  .mandala-ring-2 {
+    width: 120px;
+    height: 120px;
+  }
+
+  .mandala-ring-3 {
+    width: 90px;
+    height: 90px;
+  }
+
+  .loader-bar {
+    width: 250px;
+  }
+
+  .loader-quote {
+    padding: 0 var(--space-4);
+  }
+}
+
+@media (max-width: 480px) {
+  .loader-shankh {
+    width: 80px;
+    height: 80px;
+  }
+
+  .loader-shankh::before {
+    font-size: 50px;
+  }
+
+  .loader-mandala {
+    width: 120px;
+    height: 120px;
+  }
+
+  .mandala-ring-1 {
+    width: 120px;
+    height: 120px;
+  }
+
+  .mandala-ring-2 {
+    width: 90px;
+    height: 90px;
+  }
+
+  .mandala-ring-3 {
+    width: 60px;
+    height: 60px;
+  }
+
+  .mandala-center {
+    font-size: var(--font-size-2xl);
+  }
+
+  .loader-bar {
+    width: 200px;
+  }
+}

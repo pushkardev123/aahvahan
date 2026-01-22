@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>All Battles | AAHVAAN'26</title>
+    <meta name="description"
+        content="Explore all sports events at AAHVAAN'26 - DTU's epic sports festival themed around the Mahabharata.">
+
+    <link rel="icon" type="image/x-icon"
+        href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>⚔️</text></svg>">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/mahabharata-theme.css">
+    <link rel="stylesheet" href="css/sections.css">
+    <link rel="stylesheet" href="css/event-page.css">
+    <link rel="stylesheet" href="css/responsive.css">
+
+    <style>
+        .events-hero {
+            min-height: 40vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: var(--space-20) var(--space-4);
+            background:
+                radial-gradient(ellipse at 50% 100%, rgba(212, 175, 55, 0.1) 0%, transparent 50%),
+                var(--dark-600);
+        }
+
+        .events-hero-title {
+            font-family: var(--font-display);
+            font-size: clamp(var(--font-size-4xl), 8vw, var(--font-size-6xl));
+            background: var(--gradient-gold);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: var(--space-2);
+        }
+
+        .events-hero-sanskrit {
+            font-family: var(--font-hindi);
+            font-size: var(--font-size-2xl);
+            color: var(--fire-500);
+            margin-bottom: var(--space-4);
+        }
+
+        .events-hero-subtitle {
+            font-family: var(--font-body);
+            font-size: var(--font-size-lg);
+            color: var(--color-text-secondary);
+            max-width: 600px;
+        }
+
+        .events-grid-section {
+            background: var(--dark-700);
+            padding: var(--space-16) var(--space-4);
+        }
+
+        .events-grid-container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .events-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+            gap: var(--space-8);
+        }
+
+        .event-card-link {
+            text-decoration: none;
+            display: block;
+        }
+
+        .event-grid-card {
+            position: relative;
+            padding: var(--space-8);
+            background: var(--dark-400);
+            border: 1px solid var(--color-border-subtle);
+            border-radius: var(--radius-lg);
+            transition: all var(--transition-base);
+            overflow: hidden;
+        }
+
+        .event-grid-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: var(--gradient-gold);
+            opacity: 0;
+            transition: opacity var(--transition-base);
+        }
+
+        .event-grid-card:hover {
+            border-color: var(--gold-500);
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-gold);
+        }
+
+        .event-grid-card:hover::before {
+            opacity: 1;
+        }
+
+        .event-card-icon {
+            font-size: 60px;
+            margin-bottom: var(--space-4);
+        }
+
+        .event-card-sanskrit {
+            font-family: var(--font-hindi);
+            font-size: var(--font-size-xl);
+            color: var(--fire-500);
+            margin-bottom: var(--space-1);
+        }
+
+        .event-card-name {
+            font-family: var(--font-display);
+            font-size: var(--font-size-2xl);
+            color: var(--gold-500);
+            margin-bottom: var(--space-2);
+        }
+
+        .event-card-battle {
+            font-family: var(--font-heading);
+            font-size: var(--font-size-sm);
+            color: var(--color-text-muted);
+            margin-bottom: var(--space-4);
+        }
+
+        .event-card-meta {
+            display: flex;
+            flex-wrap: wrap;
+            gap: var(--space-4);
+            padding-top: var(--space-4);
+            border-top: 1px solid var(--color-border-subtle);
+        }
+
+        .event-card-meta-item {
+            display: flex;
+            align-items: center;
+            gap: var(--space-2);
+            font-size: var(--font-size-sm);
+            color: var(--color-text-secondary);
+        }
+
+        .event-card-meta-item i {
+            color: var(--gold-500);
+        }
+
+        .event-card-arrow {
+            position: absolute;
+            bottom: var(--space-6);
+            right: var(--space-6);
+            width: 40px;
+            height: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: var(--dark-300);
+            border-radius: var(--radius-full);
+            color: var(--gold-500);
+            transition: all var(--transition-base);
+        }
+
+        .event-grid-card:hover .event-card-arrow {
+            background: var(--gold-500);
+            color: var(--dark-700);
+        }
+
+        @media (max-width: 768px) {
+            .events-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <nav class="nav" id="nav">
+        <div class="left">
+            <a href="index.html"
+                style="font-family: var(--font-display); font-size: 1.5rem; color: var(--gold-500); filter: var(--glow-gold); text-decoration: none;">AAHVAAN'26</a>
+        </div>
+        <div class="right">
+            <a class="nav-link" href="index.html">Home</a>
+            <a class="nav-link" href="index.html#about">About</a>
+            <a class="nav-link" href="index.html#contact">Contact</a>
+            <a class="regist" href="register.html">Register</a>
+        </div>
+    </nav>
+
+    <section class="events-hero">
+        <div class="events-hero-sanskrit">सर्वे युद्धाः</div>
+        <h1 class="events-hero-title">ALL BATTLES</h1>
+        <p class="events-hero-subtitle">Choose your battlefield and prove your worth. Each sport is a legendary battle
+            waiting for its warriors.</p>
+    </section>
+
+    <section class="events-grid-section">
+        <div class="events-grid-container">
+            <div class="events-grid">
+
+                <a href="events/football.html" class="event-card-link">
+                    <div class="event-grid-card">
+                        <div class="event-card-icon">⚽</div>
+                        <div class="event-card-sanskrit">चक्रव्यूह</div>
+                        <h2 class="event-card-name">Football</h2>
+                        <p class="event-card-battle">Chakravyuh — The Impenetrable Formation</p>
+                        <div class="event-card-meta">
+                            <div class="event-card-meta-item"><i class="fas fa-calendar"></i> Mar 15-17</div>
+                            <div class="event-card-meta-item"><i class="fas fa-trophy"></i> ₹50,000</div>
+                        </div>
+                        <div class="event-card-arrow"><i class="fas fa-arrow-right"></i></div>
+                    </div>
+                </a>
+
+                <a href="events/basketball.html" class="event-card-link">
+                    <div class="event-grid-card">
+                        <div class="event-card-icon">🏀</div>
+                        <div class="event-card-sanskrit">गदा युद्ध</div>
+                        <h2 class="event-card-name">Basketball</h2>
+                        <p class="event-card-battle">Gada Yuddh — The Mace Battle</p>
+                        <div class="event-card-meta">
+                            <div class="event-card-meta-item"><i class="fas fa-calendar"></i> Mar 15-17</div>
+                            <div class="event-card-meta-item"><i class="fas fa-trophy"></i> ₹40,000</div>
+                        </div>
+                        <div class="event-card-arrow"><i class="fas fa-arrow-right"></i></div>
+                    </div>
+                </a>
+
+                <a href="events/cricket.html" class="event-card-link">
+                    <div class="event-grid-card">
+                        <div class="event-card-icon">🏏</div>
+                        <div class="event-card-sanskrit">गाण्डीव प्रहार</div>
+                        <h2 class="event-card-name">Cricket</h2>
+                        <p class="event-card-battle">Gandiva Strike — Arjuna's Divine Bow</p>
+                        <div class="event-card-meta">
+                            <div class="event-card-meta-item"><i class="fas fa-calendar"></i> Mar 15-17</div>
+                            <div class="event-card-meta-item"><i class="fas fa-trophy"></i> ₹75,000</div>
+                        </div>
+                        <div class="event-card-arrow"><i class="fas fa-arrow-right"></i></div>
+                    </div>
+                </a>
+
+                <a href="events/volleyball.html" class="event-card-link">
+                    <div class="event-grid-card">
+                        <div class="event-card-icon">🏐</div>
+                        <div class="event-card-sanskrit">सुदर्शन</div>
+                        <h2 class="event-card-name">Volleyball</h2>
+                        <p class="event-card-battle">Sudarshana — The Divine Discus</p>
+                        <div class="event-card-meta">
+                            <div class="event-card-meta-item"><i class="fas fa-calendar"></i> Mar 15-16</div>
+                            <div class="event-card-meta-item"><i class="fas fa-trophy"></i> ₹30,000</div>
+                        </div>
+                        <div class="event-card-arrow"><i class="fas fa-arrow-right"></i></div>
+                    </div>
+                </a>
+
+                <a href="events/badminton.html" class="event-card-link">
+                    <div class="event-grid-card">
+                        <div class="event-card-icon">🏸</div>
+                        <div class="event-card-sanskrit">शक्ति अस्त्र</div>
+                        <h2 class="event-card-name">Badminton</h2>
+                        <p class="event-card-battle">Shakti Astra — Projectile Weapons</p>
+                        <div class="event-card-meta">
+                            <div class="event-card-meta-item"><i class="fas fa-calendar"></i> Mar 15-16</div>
+                            <div class="event-card-meta-item"><i class="fas fa-trophy"></i> ₹25,000</div>
+                        </div>
+                        <div class="event-card-arrow"><i class="fas fa-arrow-right"></i></div>
+                    </div>
+                </a>
+
+                <a href="events/swimming.html" class="event-card-link">
+                    <div class="event-grid-card">
+                        <div class="event-card-icon">🏊</div>
+                        <div class="event-card-sanskrit">वरुण क्षेत्र</div>
+                        <h2 class="event-card-name">Swimming</h2>
+                        <p class="event-card-battle">Varuna's Domain — God of Waters</p>
+                        <div class="event-card-meta">
+                            <div class="event-card-meta-item"><i class="fas fa-calendar"></i> Mar 16</div>
+                            <div class="event-card-meta-item"><i class="fas fa-trophy"></i> ₹20,000</div>
+                        </div>
+                        <div class="event-card-arrow"><i class="fas fa-arrow-right"></i></div>
+                    </div>
+                </a>
+
+            </div>
+        </div>
+    </section>
+
+    <section class="register-cta">
+        <h2 class="register-cta-title">Ready to Join the War?</h2>
+        <p class="register-cta-text">Register now and choose your battlefield.</p>
+        <a href="register.html" class="btn-war"><span>⚔️</span> Register Now</a>
+    </section>
+
+    <footer>
+        <div class="footer-quote">
+            <div class="footer-quote-sanskrit">धर्मो रक्षति रक्षितः</div>
+            <div class="footer-quote-english">"Dharma protects those who protect it"</div>
+        </div>
+        <div class="love">Made with <i class="fa fa-heart"></i> by DTU Tech Warriors</div>
+    </footer>
+
+    <script src="js/main.js"></script>
+</body>
+
+</html>

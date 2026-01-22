@@ -1,0 +1,643 @@
+/* ====================================
+   AAHVAAN'26 - EVENTS SECTION
+   Sports as Legendary Mahabharata Battles
+   ==================================== */
+
+/* ========================================
+   EVENTS CONTAINER
+   ======================================== */
+.events {
+    position: relative;
+    min-height: 100vh;
+    padding: var(--space-20) var(--space-4);
+    background: var(--dark-700);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    overflow: hidden;
+}
+
+/* Background effects */
+.events-bg,
+.events-bg-phone {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0.1;
+    z-index: 0;
+}
+
+.events::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background:
+        radial-gradient(ellipse at 30% 20%, rgba(212, 175, 55, 0.05) 0%, transparent 50%),
+        radial-gradient(ellipse at 70% 80%, rgba(139, 0, 0, 0.08) 0%, transparent 50%),
+        var(--dark-600);
+    z-index: 1;
+}
+
+/* ========================================
+   SECTION HEADER
+   ======================================== */
+.events .sec-header {
+    position: relative;
+    z-index: 10;
+    font-family: var(--font-display);
+    font-size: clamp(var(--font-size-3xl), 6vw, var(--font-size-5xl));
+    font-weight: var(--font-weight-bold);
+    color: var(--gold-500);
+    text-align: center;
+    letter-spacing: 0.15em;
+    text-shadow: 0 0 40px rgba(212, 175, 55, 0.3);
+    margin-bottom: var(--space-2);
+}
+
+.events-subtitle {
+    position: relative;
+    z-index: 10;
+    font-family: var(--font-hindi);
+    font-size: var(--font-size-lg);
+    color: var(--fire-500);
+    text-align: center;
+    margin-bottom: var(--space-12);
+    text-shadow: 0 0 20px rgba(255, 107, 53, 0.3);
+}
+
+/* Section decorative divider */
+.events-divider {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: var(--space-4);
+    margin-bottom: var(--space-10);
+    position: relative;
+    z-index: 10;
+}
+
+.events-divider::before,
+.events-divider::after {
+    content: '';
+    width: 100px;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, var(--gold-500), transparent);
+}
+
+.events-divider-icon {
+    font-size: var(--font-size-2xl);
+    color: var(--gold-500);
+    filter: var(--glow-gold);
+}
+
+/* ========================================
+   EVENTS CAROUSEL CONTAINER
+   ======================================== */
+.evt-cont {
+    position: relative;
+    width: 100%;
+    max-width: 1400px;
+    z-index: 10;
+    padding: 0 var(--space-8);
+}
+
+/* Navigation Arrows */
+.evt-arrow-left,
+.evt-arrow-right {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 50px;
+    height: 50px;
+    background: var(--dark-400);
+    border: 2px solid var(--gold-500);
+    border-radius: var(--radius-full);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    z-index: 20;
+    transition: all var(--transition-base);
+}
+
+.evt-arrow-left {
+    left: 0;
+}
+
+.evt-arrow-right {
+    right: 0;
+}
+
+.evt-arrow-left::before,
+.evt-arrow-right::before {
+    content: '';
+    width: 12px;
+    height: 12px;
+    border: 3px solid var(--gold-500);
+    border-top: none;
+    border-right: none;
+    transition: border-color var(--transition-base);
+}
+
+.evt-arrow-left::before {
+    transform: rotate(45deg);
+    margin-left: 4px;
+}
+
+.evt-arrow-right::before {
+    transform: rotate(-135deg);
+    margin-right: 4px;
+}
+
+.evt-arrow-left:hover,
+.evt-arrow-right:hover {
+    background: var(--gold-500);
+    box-shadow: var(--shadow-gold);
+}
+
+.evt-arrow-left:hover::before,
+.evt-arrow-right:hover::before {
+    border-color: var(--dark-700);
+}
+
+/* ========================================
+   EVENTS CONTAINER (CARDS GRID)
+   ======================================== */
+.events-cont {
+    display: flex;
+    gap: var(--space-6);
+    overflow-x: auto;
+    scroll-behavior: smooth;
+    padding: var(--space-4) 0;
+    scrollbar-width: none;
+}
+
+.events-cont::-webkit-scrollbar {
+    display: none;
+}
+
+/* ========================================
+   EVENT CARD - WAR THEMED
+   ======================================== */
+.evt {
+    position: relative;
+    flex: 0 0 300px;
+    height: 420px;
+    background: var(--dark-300);
+    border-radius: var(--radius-xl);
+    overflow: hidden;
+    cursor: pointer;
+    transition: all var(--transition-epic);
+    border: 1px solid var(--color-border-subtle);
+    /* Ensure anchor styling works correctly */
+    text-decoration: none;
+    display: block;
+    color: inherit;
+}
+
+
+/* Card background image */
+.evt::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: inherit;
+    background-size: cover;
+    background-position: center;
+    filter: brightness(0.4) saturate(0.8);
+    transition: all var(--transition-base);
+    z-index: 0;
+}
+
+/* War-themed gradient overlay */
+.evt::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background:
+        linear-gradient(180deg,
+            rgba(10, 10, 10, 0.3) 0%,
+            transparent 30%,
+            transparent 60%,
+            rgba(10, 10, 10, 0.95) 100%),
+        linear-gradient(0deg,
+            rgba(139, 0, 0, 0.2) 0%,
+            transparent 30%);
+    z-index: 1;
+    transition: all var(--transition-base);
+}
+
+/* Golden top border on hover */
+.evt-border {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 4px;
+    background: var(--gradient-gold);
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform var(--transition-base);
+    z-index: 5;
+}
+
+.evt:hover .evt-border,
+.evt-active .evt-border {
+    transform: scaleX(1);
+}
+
+/* Card hover effects */
+.evt:hover {
+    transform: translateY(-10px) scale(1.02);
+    border-color: var(--gold-500);
+    box-shadow:
+        0 20px 50px rgba(0, 0, 0, 0.5),
+        0 0 30px rgba(212, 175, 55, 0.2);
+}
+
+.evt:hover::before {
+    filter: brightness(0.5) saturate(1);
+    transform: scale(1.05);
+}
+
+.evt-active {
+    border-color: var(--gold-500);
+    box-shadow:
+        0 0 40px rgba(212, 175, 55, 0.3),
+        inset 0 0 60px rgba(212, 175, 55, 0.05);
+}
+
+/* ========================================
+   EVENT CARD CONTENT
+   ======================================== */
+.evt-content {
+    position: relative;
+    z-index: 10;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    padding: var(--space-6);
+}
+
+/* Weapon Icon (replacing sport emoji) */
+.evt-logo {
+    position: absolute;
+    top: var(--space-6);
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 60px;
+    filter: grayscale(0.3) drop-shadow(0 0 20px rgba(212, 175, 55, 0.5));
+    z-index: 10;
+    transition: all var(--transition-base);
+}
+
+.evt:hover .evt-logo {
+    transform: translateX(-50%) scale(1.2);
+    filter: grayscale(0) drop-shadow(0 0 30px rgba(212, 175, 55, 0.8));
+}
+
+/* War-themed weapon icons */
+.evt-weapon {
+    position: absolute;
+    top: var(--space-4);
+    right: var(--space-4);
+    width: 40px;
+    height: 40px;
+    color: var(--gold-500);
+    opacity: 0.6;
+    z-index: 10;
+    transition: all var(--transition-base);
+}
+
+.evt:hover .evt-weapon {
+    opacity: 1;
+    filter: var(--glow-gold);
+}
+
+/* Label container */
+.evt-label-cont {
+    position: relative;
+    z-index: 10;
+    text-align: center;
+}
+
+/* Main sport label */
+.evt-label {
+    font-family: var(--font-display);
+    font-size: var(--font-size-xl);
+    font-weight: var(--font-weight-bold);
+    color: var(--gold-500);
+    letter-spacing: 0.1em;
+    text-shadow: 0 0 20px rgba(212, 175, 55, 0.5);
+    margin-bottom: var(--space-2);
+    display: block;
+}
+
+/* Sanskrit battle name */
+.evt-sanskrit {
+    font-family: var(--font-hindi);
+    font-size: var(--font-size-sm);
+    color: var(--fire-500);
+    opacity: 0.8;
+    margin-bottom: var(--space-1);
+}
+
+/* English subtitle (battle description) */
+.evt-subtitle {
+    font-family: var(--font-body);
+    font-size: var(--font-size-xs);
+    color: var(--color-text-muted);
+    letter-spacing: 0.05em;
+}
+
+/* Ornamental corners */
+.evt-corner {
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    border: 2px solid var(--gold-500);
+    opacity: 0.4;
+    transition: opacity var(--transition-base);
+    z-index: 10;
+}
+
+.evt-corner-tl {
+    top: var(--space-3);
+    left: var(--space-3);
+    border-right: none;
+    border-bottom: none;
+}
+
+.evt-corner-tr {
+    top: var(--space-3);
+    right: var(--space-3);
+    border-left: none;
+    border-bottom: none;
+}
+
+.evt-corner-bl {
+    bottom: var(--space-3);
+    left: var(--space-3);
+    border-right: none;
+    border-top: none;
+}
+
+.evt-corner-br {
+    bottom: var(--space-3);
+    right: var(--space-3);
+    border-left: none;
+    border-top: none;
+}
+
+.evt:hover .evt-corner {
+    opacity: 1;
+}
+
+/* ========================================
+   BATTLE CARDS - INDIVIDUAL THEMES
+   ======================================== */
+
+/* Chakravyuh - Football */
+.evt-chakravyuh {
+    --card-accent: #1E88E5;
+}
+
+.evt-chakravyuh::after {
+    background:
+        linear-gradient(180deg,
+            rgba(10, 10, 10, 0.3) 0%,
+            transparent 30%,
+            transparent 60%,
+            rgba(10, 10, 10, 0.95) 100%),
+        linear-gradient(0deg,
+            rgba(30, 136, 229, 0.15) 0%,
+            transparent 30%);
+}
+
+/* Gada Yuddh - Basketball */
+.evt-gada {
+    --card-accent: #FF5722;
+}
+
+.evt-gada::after {
+    background:
+        linear-gradient(180deg,
+            rgba(10, 10, 10, 0.3) 0%,
+            transparent 30%,
+            transparent 60%,
+            rgba(10, 10, 10, 0.95) 100%),
+        linear-gradient(0deg,
+            rgba(255, 87, 34, 0.15) 0%,
+            transparent 30%);
+}
+
+/* Gandiva - Cricket */
+.evt-gandiva {
+    --card-accent: #4CAF50;
+}
+
+.evt-gandiva::after {
+    background:
+        linear-gradient(180deg,
+            rgba(10, 10, 10, 0.3) 0%,
+            transparent 30%,
+            transparent 60%,
+            rgba(10, 10, 10, 0.95) 100%),
+        linear-gradient(0deg,
+            rgba(76, 175, 80, 0.15) 0%,
+            transparent 30%);
+}
+
+/* Sudarshana - Volleyball */
+.evt-sudarshana {
+    --card-accent: #9C27B0;
+}
+
+.evt-sudarshana::after {
+    background:
+        linear-gradient(180deg,
+            rgba(10, 10, 10, 0.3) 0%,
+            transparent 30%,
+            transparent 60%,
+            rgba(10, 10, 10, 0.95) 100%),
+        linear-gradient(0deg,
+            rgba(156, 39, 176, 0.15) 0%,
+            transparent 30%);
+}
+
+/* Shakti Astra - Badminton */
+.evt-shakti {
+    --card-accent: #00BCD4;
+}
+
+.evt-shakti::after {
+    background:
+        linear-gradient(180deg,
+            rgba(10, 10, 10, 0.3) 0%,
+            transparent 30%,
+            transparent 60%,
+            rgba(10, 10, 10, 0.95) 100%),
+        linear-gradient(0deg,
+            rgba(0, 188, 212, 0.15) 0%,
+            transparent 30%);
+}
+
+/* Varuna - Swimming */
+.evt-varuna {
+    --card-accent: #2196F3;
+}
+
+.evt-varuna::after {
+    background:
+        linear-gradient(180deg,
+            rgba(10, 10, 10, 0.3) 0%,
+            transparent 30%,
+            transparent 60%,
+            rgba(10, 10, 10, 0.95) 100%),
+        linear-gradient(0deg,
+            rgba(33, 150, 243, 0.2) 0%,
+            transparent 30%);
+}
+
+/* ========================================
+   PAGINATION DOTS
+   ======================================== */
+.event-dots-cont {
+    display: flex;
+    justify-content: center;
+    gap: var(--space-2);
+    margin-top: var(--space-8);
+    position: relative;
+    z-index: 10;
+}
+
+.event-dot {
+    width: 10px;
+    height: 10px;
+    border-radius: var(--radius-full);
+    background: var(--dark-200);
+    border: 1px solid var(--color-border);
+    cursor: pointer;
+    transition: all var(--transition-base);
+}
+
+.event-dot:hover {
+    background: var(--gold-600);
+}
+
+.event-dot.active {
+    background: var(--gold-500);
+    width: 30px;
+    box-shadow: var(--shadow-gold);
+}
+
+/* ========================================
+   VIEW ALL BUTTON
+   ======================================== */
+.evt-guidelines {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--space-2);
+    padding: var(--space-4) var(--space-8);
+    margin-top: var(--space-10);
+    font-family: var(--font-heading);
+    font-size: var(--font-size-sm);
+    font-weight: var(--font-weight-semibold);
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+    color: var(--gold-500);
+    background: transparent;
+    border: 2px solid var(--gold-500);
+    border-radius: var(--radius-sm);
+    cursor: pointer;
+    transition: all var(--transition-base);
+    text-decoration: none;
+    position: relative;
+    z-index: 10;
+}
+
+.evt-guidelines:hover {
+    background: var(--gold-500);
+    color: var(--dark-700);
+    box-shadow: var(--shadow-gold-strong);
+}
+
+.evt-guidelines::after {
+    content: '→';
+    transition: transform var(--transition-base);
+}
+
+.evt-guidelines:hover::after {
+    transform: translateX(5px);
+}
+
+/* ========================================
+   RESPONSIVE
+   ======================================== */
+@media (max-width: 1200px) {
+    .evt {
+        flex: 0 0 280px;
+        height: 380px;
+    }
+}
+
+@media (max-width: 768px) {
+    .events {
+        padding: var(--space-16) var(--space-4);
+    }
+
+    .evt-cont {
+        padding: 0 var(--space-4);
+    }
+
+    .evt-arrow-left,
+    .evt-arrow-right {
+        display: none;
+    }
+
+    .evt {
+        flex: 0 0 260px;
+        height: 350px;
+    }
+
+    .evt-logo {
+        font-size: 50px;
+    }
+
+    .evt-label {
+        font-size: var(--font-size-lg);
+    }
+}
+
+@media (max-width: 480px) {
+    .evt {
+        flex: 0 0 240px;
+        height: 320px;
+    }
+
+    .evt-logo {
+        font-size: 40px;
+    }
+
+    .evt-label {
+        font-size: var(--font-size-base);
+    }
+
+    .evt-corner {
+        width: 15px;
+        height: 15px;
+    }
+}

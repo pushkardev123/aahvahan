@@ -1,0 +1,789 @@
+/* ====================================
+   AAHVAAN'26 - MAHABHARATA THEME
+   Epic Kurukshetra Battlefield Aesthetics
+   ==================================== */
+
+/* Google Fonts Import */
+@import url('https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@400;700;900&family=Cinzel:wght@400;500;600;700&family=Poppins:wght@300;400;500;600;700&family=Noto+Sans+Devanagari:wght@400;500;600;700&display=swap');
+
+:root {
+    /* ========================================
+       KURUKSHETRA COLOR PALETTE
+       ======================================== */
+    
+    /* Primary Colors - Royal Golds */
+    --gold-50: #FFF9E6;
+    --gold-100: #FFEFB8;
+    --gold-200: #FFE08A;
+    --gold-300: #FFD15C;
+    --gold-400: #FFC72E;
+    --gold-500: #D4AF37; /* Royal Gold - Primary */
+    --gold-600: #B8960F;
+    --gold-700: #9A7D0A;
+    --gold-800: #7C6408;
+    --gold-900: #5E4B06;
+    
+    /* War Crimsons */
+    --crimson-50: #FFE5E5;
+    --crimson-100: #FFCCCC;
+    --crimson-200: #FF9999;
+    --crimson-300: #FF6666;
+    --crimson-400: #FF3333;
+    --crimson-500: #DC143C; /* Blood Crimson */
+    --crimson-600: #B91C1C;
+    --crimson-700: #8B0000; /* Deep Blood */
+    --crimson-800: #5C0000;
+    --crimson-900: #2D0000;
+    
+    /* Fire & Ember */
+    --fire-50: #FFF7ED;
+    --fire-100: #FFEDD5;
+    --fire-200: #FED7AA;
+    --fire-300: #FDBA74;
+    --fire-400: #FB923C;
+    --fire-500: #FF6B35; /* Deep Saffron */
+    --fire-600: #EA580C;
+    --fire-700: #C2410C;
+    --fire-800: #9A3412;
+    --fire-900: #7C2D12;
+    
+    /* Bronze & Metallic */
+    --bronze-50: #FDF4E7;
+    --bronze-100: #F9E4C8;
+    --bronze-200: #F2CFA0;
+    --bronze-300: #E6B578;
+    --bronze-400: #D69E5C;
+    --bronze-500: #CD7F32; /* Ancient Bronze */
+    --bronze-600: #A66429;
+    --bronze-700: #7F4C20;
+    --bronze-800: #593517;
+    --bronze-900: #33200E;
+    
+    /* Dark Battlefield */
+    --dark-50: #3A3A3A;
+    --dark-100: #2F2F2F;
+    --dark-200: #2A2A2A; /* Ash */
+    --dark-300: #1F1F1F;
+    --dark-400: #1A1A1A; /* Smoke Gray */
+    --dark-500: #141414;
+    --dark-600: #0F0F0F;
+    --dark-700: #0A0A0A; /* Midnight Black */
+    --dark-800: #050505;
+    --dark-900: #000000;
+    
+    /* Ember Orange */
+    --ember: #FF4500;
+    --ember-glow: rgba(255, 69, 0, 0.6);
+    
+    /* ========================================
+       SEMANTIC COLOR TOKENS
+       ======================================== */
+    --color-background: var(--dark-700);
+    --color-surface: var(--dark-400);
+    --color-surface-elevated: var(--dark-200);
+    --color-text: #F5F5F5;
+    --color-text-secondary: rgba(245, 245, 245, 0.7);
+    --color-text-muted: rgba(245, 245, 245, 0.5);
+    --color-primary: var(--gold-500);
+    --color-primary-hover: var(--gold-400);
+    --color-primary-active: var(--gold-600);
+    --color-accent: var(--fire-500);
+    --color-accent-hover: var(--fire-400);
+    --color-danger: var(--crimson-500);
+    --color-border: rgba(212, 175, 55, 0.3);
+    --color-border-subtle: rgba(212, 175, 55, 0.15);
+    
+    /* ========================================
+       GRADIENT DEFINITIONS
+       ======================================== */
+    --gradient-gold: linear-gradient(135deg, var(--gold-400) 0%, var(--gold-500) 50%, var(--gold-700) 100%);
+    --gradient-gold-shine: linear-gradient(90deg, transparent 0%, rgba(255, 255, 255, 0.4) 50%, transparent 100%);
+    --gradient-fire: linear-gradient(135deg, var(--fire-400) 0%, var(--fire-500) 50%, var(--crimson-600) 100%);
+    --gradient-battlefield: linear-gradient(180deg, 
+        var(--dark-700) 0%, 
+        var(--dark-600) 30%, 
+        rgba(139, 0, 0, 0.1) 60%, 
+        var(--dark-700) 100%);
+    --gradient-smoke: linear-gradient(180deg, 
+        transparent 0%, 
+        rgba(26, 26, 26, 0.5) 50%, 
+        rgba(10, 10, 10, 0.9) 100%);
+    --gradient-hero-overlay: linear-gradient(180deg,
+        rgba(10, 10, 10, 0.3) 0%,
+        rgba(10, 10, 10, 0.1) 40%,
+        rgba(10, 10, 10, 0.5) 70%,
+        rgba(10, 10, 10, 0.95) 100%);
+    
+    /* ========================================
+       TYPOGRAPHY
+       ======================================== */
+    --font-display: 'Cinzel Decorative', serif;
+    --font-heading: 'Cinzel', serif;
+    --font-body: 'Poppins', sans-serif;
+    --font-hindi: 'Noto Sans Devanagari', sans-serif;
+    
+    --font-size-xs: 0.75rem;
+    --font-size-sm: 0.875rem;
+    --font-size-base: 1rem;
+    --font-size-lg: 1.125rem;
+    --font-size-xl: 1.25rem;
+    --font-size-2xl: 1.5rem;
+    --font-size-3xl: 1.875rem;
+    --font-size-4xl: 2.25rem;
+    --font-size-5xl: 3rem;
+    --font-size-6xl: 3.75rem;
+    --font-size-7xl: 4.5rem;
+    --font-size-8xl: 6rem;
+    
+    --font-weight-light: 300;
+    --font-weight-normal: 400;
+    --font-weight-medium: 500;
+    --font-weight-semibold: 600;
+    --font-weight-bold: 700;
+    --font-weight-black: 900;
+    
+    /* ========================================
+       SPACING
+       ======================================== */
+    --space-1: 0.25rem;
+    --space-2: 0.5rem;
+    --space-3: 0.75rem;
+    --space-4: 1rem;
+    --space-5: 1.25rem;
+    --space-6: 1.5rem;
+    --space-8: 2rem;
+    --space-10: 2.5rem;
+    --space-12: 3rem;
+    --space-16: 4rem;
+    --space-20: 5rem;
+    --space-24: 6rem;
+    
+    /* ========================================
+       EFFECTS & SHADOWS
+       ======================================== */
+    --shadow-gold: 0 0 20px rgba(212, 175, 55, 0.3);
+    --shadow-gold-strong: 0 0 40px rgba(212, 175, 55, 0.5);
+    --shadow-ember: 0 0 30px rgba(255, 69, 0, 0.4);
+    --shadow-crimson: 0 0 20px rgba(220, 20, 60, 0.3);
+    --shadow-dark: 0 10px 40px rgba(0, 0, 0, 0.5);
+    --shadow-card: 0 4px 20px rgba(0, 0, 0, 0.4), 0 0 1px rgba(212, 175, 55, 0.3);
+    
+    --glow-gold: drop-shadow(0 0 10px rgba(212, 175, 55, 0.6));
+    --glow-fire: drop-shadow(0 0 15px rgba(255, 107, 53, 0.5));
+    --glow-ember: drop-shadow(0 0 20px rgba(255, 69, 0, 0.7));
+    
+    /* ========================================
+       BORDERS & RADIUS
+       ======================================== */
+    --radius-sm: 4px;
+    --radius-md: 8px;
+    --radius-lg: 12px;
+    --radius-xl: 16px;
+    --radius-2xl: 24px;
+    --radius-full: 9999px;
+    
+    --border-ornate: 2px solid var(--gold-500);
+    --border-subtle: 1px solid var(--color-border-subtle);
+    
+    /* ========================================
+       TRANSITIONS
+       ======================================== */
+    --transition-fast: 150ms ease;
+    --transition-base: 250ms ease;
+    --transition-slow: 400ms ease;
+    --transition-epic: 800ms cubic-bezier(0.16, 1, 0.3, 1);
+    
+    /* ========================================
+       Z-INDEX LAYERS
+       ======================================== */
+    --z-background: -1;
+    --z-base: 0;
+    --z-particles: 10;
+    --z-content: 20;
+    --z-header: 100;
+    --z-overlay: 500;
+    --z-modal: 1000;
+    --z-loader: 9999;
+}
+
+/* ========================================
+   BASE RESETS
+   ======================================== */
+*, *::before, *::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+    scrollbar-width: thin;
+    scrollbar-color: var(--gold-500) var(--dark-600);
+    font-size: 16px;
+}
+
+html::-webkit-scrollbar {
+    width: 8px;
+}
+
+html::-webkit-scrollbar-track {
+    background: var(--dark-600);
+}
+
+html::-webkit-scrollbar-thumb {
+    background: var(--gold-500);
+    border-radius: var(--radius-full);
+}
+
+html::-webkit-scrollbar-thumb:hover {
+    background: var(--gold-400);
+}
+
+body {
+    font-family: var(--font-body);
+    background: var(--color-background);
+    color: var(--color-text);
+    line-height: 1.6;
+    overflow-x: hidden;
+    min-height: 100vh;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+a {
+    color: var(--color-primary);
+    text-decoration: none;
+    transition: color var(--transition-fast);
+}
+
+a:hover {
+    color: var(--color-primary-hover);
+}
+
+/* ========================================
+   TYPOGRAPHY UTILITIES
+   ======================================== */
+.font-display {
+    font-family: var(--font-display);
+}
+
+.font-heading {
+    font-family: var(--font-heading);
+}
+
+.font-hindi {
+    font-family: var(--font-hindi);
+}
+
+.text-gold {
+    color: var(--gold-500);
+}
+
+.text-gradient-gold {
+    background: var(--gradient-gold);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.text-fire {
+    color: var(--fire-500);
+}
+
+.text-crimson {
+    color: var(--crimson-500);
+}
+
+/* ========================================
+   BUTTON STYLES
+   ======================================== */
+.btn-war {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: var(--space-2);
+    padding: var(--space-3) var(--space-6);
+    font-family: var(--font-heading);
+    font-size: var(--font-size-sm);
+    font-weight: var(--font-weight-semibold);
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: var(--dark-700);
+    background: var(--gradient-gold);
+    border: none;
+    border-radius: var(--radius-sm);
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+    transition: all var(--transition-base);
+    box-shadow: var(--shadow-gold);
+}
+
+.btn-war::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: var(--gradient-gold-shine);
+    transition: left var(--transition-slow);
+}
+
+.btn-war:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-gold-strong);
+}
+
+.btn-war:hover::before {
+    left: 100%;
+}
+
+.btn-war:active {
+    transform: translateY(0);
+}
+
+.btn-war-outline {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: var(--space-2);
+    padding: var(--space-3) var(--space-6);
+    font-family: var(--font-heading);
+    font-size: var(--font-size-sm);
+    font-weight: var(--font-weight-semibold);
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: var(--gold-500);
+    background: transparent;
+    border: 2px solid var(--gold-500);
+    border-radius: var(--radius-sm);
+    cursor: pointer;
+    transition: all var(--transition-base);
+}
+
+.btn-war-outline:hover {
+    background: var(--gold-500);
+    color: var(--dark-700);
+    box-shadow: var(--shadow-gold);
+}
+
+/* ========================================
+   KEYFRAME ANIMATIONS
+   ======================================== */
+
+/* Ember Float Animation */
+@keyframes emberFloat {
+    0% {
+        transform: translateY(100vh) translateX(0) scale(0);
+        opacity: 0;
+    }
+    10% {
+        opacity: 1;
+        transform: translateY(90vh) translateX(10px) scale(1);
+    }
+    90% {
+        opacity: 0.8;
+    }
+    100% {
+        transform: translateY(-10vh) translateX(-20px) scale(0.5);
+        opacity: 0;
+    }
+}
+
+/* Arrow Rain Animation */
+@keyframes arrowFall {
+    0% {
+        transform: translateY(-100px) translateX(-50px) rotate(45deg);
+        opacity: 0;
+    }
+    10% {
+        opacity: 0.6;
+    }
+    90% {
+        opacity: 0.4;
+    }
+    100% {
+        transform: translateY(100vh) translateX(100px) rotate(45deg);
+        opacity: 0;
+    }
+}
+
+/* Smoke Drift */
+@keyframes smokeDrift {
+    0% {
+        transform: translateX(0) translateY(0) scale(1);
+        opacity: 0.3;
+    }
+    50% {
+        transform: translateX(30px) translateY(-20px) scale(1.2);
+        opacity: 0.2;
+    }
+    100% {
+        transform: translateX(0) translateY(0) scale(1);
+        opacity: 0.3;
+    }
+}
+
+/* Golden Pulse */
+@keyframes goldenPulse {
+    0%, 100% {
+        box-shadow: 0 0 20px rgba(212, 175, 55, 0.3);
+    }
+    50% {
+        box-shadow: 0 0 40px rgba(212, 175, 55, 0.6);
+    }
+}
+
+/* Fire Flicker */
+@keyframes fireFlicker {
+    0%, 100% {
+        opacity: 1;
+        filter: brightness(1);
+    }
+    25% {
+        opacity: 0.9;
+        filter: brightness(1.1);
+    }
+    50% {
+        opacity: 1;
+        filter: brightness(0.95);
+    }
+    75% {
+        opacity: 0.95;
+        filter: brightness(1.05);
+    }
+}
+
+/* Lightning Flash */
+@keyframes lightningFlash {
+    0%, 100% {
+        opacity: 0;
+    }
+    5% {
+        opacity: 1;
+    }
+    10% {
+        opacity: 0;
+    }
+    15% {
+        opacity: 0.8;
+    }
+    20% {
+        opacity: 0;
+    }
+}
+
+/* Warrior Idle Animation */
+@keyframes warriorIdle {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-5px);
+    }
+}
+
+/* Text Reveal */
+@keyframes textReveal {
+    0% {
+        clip-path: inset(0 100% 0 0);
+    }
+    100% {
+        clip-path: inset(0 0 0 0);
+    }
+}
+
+/* Fade In Up */
+@keyframes fadeInUp {
+    0% {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Scale In */
+@keyframes scaleIn {
+    0% {
+        opacity: 0;
+        transform: scale(0.9);
+    }
+    100% {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+/* Rotate Slow */
+@keyframes rotateSlow {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+/* Shimmer Effect */
+@keyframes shimmer {
+    0% {
+        background-position: -200% center;
+    }
+    100% {
+        background-position: 200% center;
+    }
+}
+
+/* War Drums Pulse */
+@keyframes warDrumPulse {
+    0%, 100% {
+        transform: scale(1);
+    }
+    10% {
+        transform: scale(1.02);
+    }
+    20% {
+        transform: scale(1);
+    }
+}
+
+/* ========================================
+   PARTICLE CONTAINERS
+   ======================================== */
+.ember-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: var(--z-particles);
+    overflow: hidden;
+}
+
+.ember {
+    position: absolute;
+    width: 4px;
+    height: 4px;
+    background: var(--ember);
+    border-radius: 50%;
+    box-shadow: 0 0 6px var(--ember), 0 0 12px var(--ember-glow);
+    animation: emberFloat linear infinite;
+}
+
+.arrow-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: var(--z-particles);
+    overflow: hidden;
+    opacity: 0.3;
+}
+
+.arrow {
+    position: absolute;
+    width: 40px;
+    height: 2px;
+    background: linear-gradient(90deg, transparent, var(--gold-500), var(--gold-300));
+    animation: arrowFall linear infinite;
+}
+
+.arrow::before {
+    content: '';
+    position: absolute;
+    right: 0;
+    top: -3px;
+    border: 4px solid transparent;
+    border-left: 8px solid var(--gold-300);
+}
+
+/* ========================================
+   SECTION STYLES
+   ======================================== */
+section {
+    position: relative;
+    overflow: hidden;
+}
+
+.section-header {
+    font-family: var(--font-display);
+    font-size: clamp(var(--font-size-3xl), 5vw, var(--font-size-5xl));
+    font-weight: var(--font-weight-bold);
+    text-align: center;
+    color: var(--gold-500);
+    text-shadow: 0 0 30px rgba(212, 175, 55, 0.3);
+    margin-bottom: var(--space-4);
+    letter-spacing: 0.1em;
+}
+
+.section-header-hindi {
+    font-family: var(--font-hindi);
+    font-size: var(--font-size-lg);
+    color: var(--color-text-secondary);
+    text-align: center;
+    margin-bottom: var(--space-8);
+}
+
+.section-divider {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: var(--space-4);
+    margin: var(--space-8) 0;
+}
+
+.section-divider::before,
+.section-divider::after {
+    content: '';
+    flex: 1;
+    max-width: 200px;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, var(--gold-500), transparent);
+}
+
+.divider-icon {
+    color: var(--gold-500);
+    font-size: var(--font-size-2xl);
+    filter: var(--glow-gold);
+}
+
+/* ========================================
+   CARD STYLES (War Themed)
+   ======================================== */
+.war-card {
+    background: var(--dark-300);
+    border: 1px solid var(--color-border-subtle);
+    border-radius: var(--radius-lg);
+    padding: var(--space-6);
+    position: relative;
+    overflow: hidden;
+    transition: all var(--transition-base);
+}
+
+.war-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 3px;
+    background: var(--gradient-gold);
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform var(--transition-base);
+}
+
+.war-card:hover {
+    border-color: var(--gold-500);
+    box-shadow: var(--shadow-card);
+    transform: translateY(-4px);
+}
+
+.war-card:hover::before {
+    transform: scaleX(1);
+}
+
+/* Ornamental corners for cards */
+.ornate-corners {
+    position: relative;
+}
+
+.ornate-corners::before,
+.ornate-corners::after {
+    content: '◆';
+    position: absolute;
+    color: var(--gold-500);
+    font-size: 12px;
+    opacity: 0.6;
+}
+
+.ornate-corners::before {
+    top: -6px;
+    left: -6px;
+}
+
+.ornate-corners::after {
+    bottom: -6px;
+    right: -6px;
+}
+
+/* ========================================
+   UTILITY CLASSES
+   ======================================== */
+.container {
+    width: 100%;
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0 var(--space-4);
+}
+
+.flex {
+    display: flex;
+}
+
+.flex-col {
+    flex-direction: column;
+}
+
+.items-center {
+    align-items: center;
+}
+
+.justify-center {
+    justify-content: center;
+}
+
+.justify-between {
+    justify-content: space-between;
+}
+
+.text-center {
+    text-align: center;
+}
+
+.sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0;
+}
+
+/* Animation utility classes */
+.animate-pulse-gold {
+    animation: goldenPulse 2s ease-in-out infinite;
+}
+
+.animate-flicker {
+    animation: fireFlicker 0.5s ease-in-out infinite;
+}
+
+.animate-float {
+    animation: warriorIdle 3s ease-in-out infinite;
+}
+
+.animate-shimmer {
+    background: linear-gradient(
+        90deg,
+        transparent 0%,
+        rgba(212, 175, 55, 0.3) 50%,
+        transparent 100%
+    );
+    background-size: 200% 100%;
+    animation: shimmer 2s linear infinite;
+}
