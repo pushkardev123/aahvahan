@@ -63,6 +63,92 @@
             margin: 0 auto;
         }
 
+        .register-links-grid {
+            display: grid;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            gap: var(--space-6);
+        }
+
+        .register-link-card {
+            background: linear-gradient(180deg, rgba(212, 175, 55, 0.08) 0%, rgba(18, 18, 18, 0.92) 100%);
+            border: 1px solid rgba(212, 175, 55, 0.25);
+            border-radius: var(--radius-lg);
+            padding: var(--space-8);
+            box-shadow: 0 12px 32px rgba(0, 0, 0, 0.25);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .register-link-card::before {
+            content: "";
+            position: absolute;
+            inset: 0;
+            background: radial-gradient(circle at top right, rgba(212, 175, 55, 0.12), transparent 35%);
+            pointer-events: none;
+        }
+
+        .register-link-card>* {
+            position: relative;
+            z-index: 1;
+        }
+
+        .register-link-kicker {
+            display: inline-flex;
+            align-items: center;
+            gap: var(--space-2);
+            font-family: var(--font-heading);
+            font-size: var(--font-size-xs);
+            letter-spacing: 0.12em;
+            text-transform: uppercase;
+            color: var(--fire-500);
+            margin-bottom: var(--space-3);
+        }
+
+        .register-link-title {
+            font-family: var(--font-display);
+            font-size: clamp(var(--font-size-xl), 2.5vw, var(--font-size-2xl));
+            color: var(--gold-500);
+            margin-bottom: var(--space-3);
+        }
+
+        .register-link-description {
+            font-family: var(--font-body);
+            font-size: var(--font-size-base);
+            line-height: 1.7;
+            color: var(--color-text-secondary);
+            margin-bottom: var(--space-6);
+        }
+
+        .register-link-button {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: var(--space-2);
+            width: 100%;
+            padding: var(--space-4);
+            font-family: var(--font-heading);
+            font-size: var(--font-size-base);
+            font-weight: var(--font-weight-bold);
+            color: var(--dark-700);
+            text-decoration: none;
+            background: var(--gradient-gold);
+            border-radius: var(--radius-md);
+            transition: transform var(--transition-base), box-shadow var(--transition-base);
+        }
+
+        .register-link-button:hover {
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-gold);
+        }
+
+        .register-link-meta {
+            margin-top: var(--space-4);
+            font-family: var(--font-body);
+            font-size: var(--font-size-sm);
+            color: var(--color-text-muted);
+            line-height: 1.6;
+        }
+
         .register-form {
             background: var(--dark-400);
             border: 1px solid var(--color-border-subtle);
@@ -233,6 +319,10 @@
                 grid-template-columns: 1fr;
             }
 
+            .register-links-grid {
+                grid-template-columns: 1fr;
+            }
+
             .register-form {
                 padding: var(--space-6);
             }
@@ -256,10 +346,10 @@
     </nav>
 
     <section class="register-hero">
-        <div class="register-hero-sanskrit">सेना पञ्जीकरण</div>
-        <h1 class="register-hero-title">JOIN THE WAR</h1>
-        <p class="register-hero-subtitle">Register your team and prepare for battle at AAHVAAN'26. The battlefield
-            awaits!</p>
+        <div class="register-hero-sanskrit">पञ्जीकरण द्वार</div>
+        <h1 class="register-hero-title">REGISTER FOR AAHVAAN'26</h1>
+        <p class="register-hero-subtitle">Use the official forms below to complete team registration and payment
+            submission for DTU's grand sports conclave.</p>
     </section>
 
     <section class="register-content">
@@ -268,107 +358,65 @@
                 <i class="fas fa-arrow-left"></i> Back to Home
             </a>
 
-            <form class="register-form" id="registrationForm">
-
+            <div class="register-form">
                 <div class="form-section">
-                    <h2 class="form-section-title">⚔️ Team Information</h2>
+                    <h2 class="form-section-title">⚔️ Official Registration Portals</h2>
+                    <p class="register-hero-subtitle"
+                        style="max-width: 100%; text-align: left; margin-bottom: var(--space-6);">
+                        All participant details and proof submissions will be collected through the official Google
+                        Forms. Please complete both steps carefully to ensure your entry is recorded successfully.
+                    </p>
 
-                    <div class="form-group">
-                        <label class="form-label">
-                            Team Name <span class="required">*</span>
-                        </label>
-                        <input type="text" class="form-input" name="teamName" placeholder="Enter your team name"
-                            required>
-                    </div>
+                    <div class="register-links-grid">
+                        <article class="register-link-card">
+                            <div class="register-link-kicker">
+                                <i class="fas fa-scroll"></i>
+                                Step 1
+                            </div>
+                            <h3 class="register-link-title">Registration Form</h3>
+                            <p class="register-link-description">
+                                Submit your team details, institution information, sport selection, and primary contact
+                                details through the official registration form.
+                            </p>
+                            <a class="register-link-button" href="https://forms.gle/xDbgGfuJP5nVnZq59" target="_blank"
+                                rel="noopener noreferrer">
+                                Open Registration Form <i class="fas fa-arrow-up-right-from-square"></i>
+                            </a>
+                            <p class="register-link-meta">
+                                Complete this form first to officially register your contingent for AAHVAAN'26.
+                            </p>
+                        </article>
 
-                    <div class="form-group">
-                        <label class="form-label">
-                            College/University <span class="required">*</span>
-                        </label>
-                        <input type="text" class="form-input" name="college" placeholder="Enter your college name"
-                            required>
-                    </div>
-
-                    <div class="form-group">
-                        <label class="form-label">
-                            Select Event <span class="required">*</span>
-                        </label>
-                        <select class="form-select" name="event" id="eventSelect" required>
-                            <option value="">Choose your battlefield</option>
-                            <option value="football">⚽ Football - Chakravyuh (₹2,000)</option>
-                            <option value="basketball">🏀 Basketball - Gada Yuddh (₹1,500)</option>
-                            <option value="cricket">🏏 Cricket - Gandiva Strike (₹2,500)</option>
-                            <option value="volleyball">🏐 Volleyball - Sudarshana (₹1,200)</option>
-                            <option value="badminton">🏸 Badminton - Shakti Astra (₹500/₹800)</option>
-                            <option value="swimming">🏊 Swimming - Varuna's Domain (₹300/₹1,000)</option>
-                        </select>
+                        <article class="register-link-card">
+                            <div class="register-link-kicker">
+                                <i class="fas fa-receipt"></i>
+                                Step 2
+                            </div>
+                            <h3 class="register-link-title">Payment Submission Form</h3>
+                            <p class="register-link-description">
+                                After registration, upload your payment details and any required transaction proof using
+                                the official payment submission form.
+                            </p>
+                            <a class="register-link-button"
+                                href="https://docs.google.com/forms/d/e/1FAIpQLSdCKUziCgERTI8IOIhaxPhdcsjHyocDee32-2zzSz5ZwI056Q/viewform?usp=publish-editor"
+                                target="_blank" rel="noopener noreferrer">
+                                Open Payment Form <i class="fas fa-arrow-up-right-from-square"></i>
+                            </a>
+                            <p class="register-link-meta">
+                                Submit this after payment so the organizing team can verify and confirm your
+                                participation.
+                            </p>
+                        </article>
                     </div>
                 </div>
-
-                <div class="form-section">
-                    <h2 class="form-section-title">👤 Captain Details</h2>
-
-                    <div class="form-row">
-                        <div class="form-group">
-                            <label class="form-label">
-                                Captain Name <span class="required">*</span>
-                            </label>
-                            <input type="text" class="form-input" name="captainName" placeholder="Full name" required>
-                        </div>
-
-                        <div class="form-group">
-                            <label class="form-label">
-                                Phone Number <span class="required">*</span>
-                            </label>
-                            <input type="tel" class="form-input" name="captainPhone" placeholder="+91 98765 43210"
-                                required>
-                        </div>
-                    </div>
-
-                    <div class="form-group">
-                        <label class="form-label">
-                            Email Address <span class="required">*</span>
-                        </label>
-                        <input type="email" class="form-input" name="captainEmail" placeholder="captain@email.com"
-                            required>
-                    </div>
-                </div>
-
-                <div class="form-section">
-                    <h2 class="form-section-title">📋 Team Members</h2>
-
-                    <div class="form-group">
-                        <label class="form-label">
-                            Team Member Names
-                        </label>
-                        <textarea class="form-textarea" name="teamMembers"
-                            placeholder="Enter team member names (one per line)&#10;Example:&#10;Arjun Sharma&#10;Bheem Singh&#10;Nakul Verma"></textarea>
-                    </div>
-                </div>
-
-                <div class="form-section">
-                    <h2 class="form-section-title">✅ Agreement</h2>
-
-                    <label class="form-checkbox-group">
-                        <input type="checkbox" name="agreeRules" required>
-                        <span class="form-checkbox-label">
-                            I confirm that all team members are bonafide students of the mentioned institution and agree
-                            to abide by the rules and regulations of AAHVAAN'26.
-                        </span>
-                    </label>
-                </div>
-
-                <button type="submit" class="form-submit">
-                    <span>⚔️</span> Submit Registration
-                </button>
 
                 <div class="form-note">
-                    <strong>Note:</strong> Registration deadline is March 10, 2026. Entry fees to be paid at the venue
-                    on Day 1.
+                    <strong>Important:</strong> Please ensure both forms are filled correctly. Registration will be
+                    considered complete only after the relevant details and payment submission have been received.
                     For queries, contact <a href="mailto:info@aahvaan.in"
                         style="color: var(--gold-500);">info@aahvaan.in</a>
                 </div>
-            </form>
+            </div>
         </div>
     </section>
 
@@ -380,34 +428,7 @@
         <div class="love">Made with <i class="fa fa-heart"></i> by DTU Tech Warriors</div>
     </footer>
 
-    <script>
-        // Pre-select event from URL parameter
-        document.addEventListener('DOMContentLoaded', function () {
-            const urlParams = new URLSearchParams(window.location.search);
-            const eventParam = urlParams.get('event');
-            if (eventParam) {
-                const eventSelect = document.getElementById('eventSelect');
-                if (eventSelect) {
-                    eventSelect.value = eventParam;
-                }
-            }
-        });
 
-        // Form submission handler
-        document.getElementById('registrationForm').addEventListener('submit', function (e) {
-            e.preventDefault();
-
-            // Get form data
-            const formData = new FormData(this);
-            const data = Object.fromEntries(formData.entries());
-
-            // Show success message (in production, this would send to a server)
-            alert('🎉 Registration Submitted!\n\nTeam: ' + data.teamName + '\nEvent: ' + data.event + '\n\nYou will receive a confirmation email shortly.');
-
-            // Reset form
-            this.reset();
-        });
-    </script>
 
     <script src="js/main.js"></script>
 </body>
