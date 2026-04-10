@@ -13,12 +13,8 @@
       "teamSize": "11 + 5 substitutes",
       "entryFee": "₹2000 per team",
       "prizePool": "₹50,000",
-      "schedule": [
-        { "round": "Group Stage", "date": "March 15, 2026", "time": "9:00 AM - 6:00 PM", "venue": "Main Ground" },
-        { "round": "Quarter Finals", "date": "March 16, 2026", "time": "9:00 AM - 1:00 PM", "venue": "Main Ground" },
-        { "round": "Semi Finals", "date": "March 16, 2026", "time": "3:00 PM - 6:00 PM", "venue": "Main Ground" },
-        { "round": "Finals", "date": "March 17, 2026", "time": "4:00 PM", "venue": "Main Ground" }
-      ],
+      "schedule": [],
+      "scheduleNote": "Fixtures will be updated soon. Please check back soon.",
       "rules": [
         "Standard FIFA rules apply",
         "Two halves of 35 minutes each",
@@ -47,12 +43,8 @@
       "teamSize": "5 + 7 substitutes",
       "entryFee": "₹1500 per team",
       "prizePool": "₹40,000",
-      "schedule": [
-        { "round": "Group Stage", "date": "March 15, 2026", "time": "10:00 AM - 5:00 PM", "venue": "Indoor Court A" },
-        { "round": "Quarter Finals", "date": "March 16, 2026", "time": "10:00 AM - 2:00 PM", "venue": "Indoor Court A" },
-        { "round": "Semi Finals", "date": "March 16, 2026", "time": "4:00 PM - 6:00 PM", "venue": "Indoor Court A" },
-        { "round": "Finals", "date": "March 17, 2026", "time": "2:00 PM", "venue": "Indoor Court A" }
-      ],
+      "schedule": [],
+      "scheduleNote": "Fixtures will be updated soon. Please check back soon.",
       "rules": [
         "FIBA rules apply",
         "Four quarters of 10 minutes each",
@@ -81,12 +73,8 @@
       "teamSize": "11 + 4 substitutes",
       "entryFee": "₹2500 per team",
       "prizePool": "₹75,000",
-      "schedule": [
-        { "round": "League Stage", "date": "March 15, 2026", "time": "8:00 AM - 6:00 PM", "venue": "Cricket Ground" },
-        { "round": "Super 8", "date": "March 16, 2026", "time": "8:00 AM - 4:00 PM", "venue": "Cricket Ground" },
-        { "round": "Semi Finals", "date": "March 16, 2026", "time": "5:00 PM - 8:00 PM", "venue": "Cricket Ground" },
-        { "round": "Finals", "date": "March 17, 2026", "time": "10:00 AM", "venue": "Cricket Ground" }
-      ],
+      "schedule": [],
+      "scheduleNote": "Fixtures will be updated soon. Please check back soon.",
       "rules": [
         "T20 format matches",
         "Powerplay: First 6 overs",
@@ -115,12 +103,8 @@
       "teamSize": "6 + 6 substitutes",
       "entryFee": "₹1200 per team",
       "prizePool": "₹30,000",
-      "schedule": [
-        { "round": "Pool Matches", "date": "March 15, 2026", "time": "9:00 AM - 5:00 PM", "venue": "Outdoor Court" },
-        { "round": "Quarter Finals", "date": "March 16, 2026", "time": "9:00 AM - 12:00 PM", "venue": "Outdoor Court" },
-        { "round": "Semi Finals", "date": "March 16, 2026", "time": "2:00 PM - 4:00 PM", "venue": "Outdoor Court" },
-        { "round": "Finals", "date": "March 16, 2026", "time": "5:00 PM", "venue": "Outdoor Court" }
-      ],
+      "schedule": [],
+      "scheduleNote": "Fixtures will be updated soon. Please check back soon.",
       "rules": [
         "FIVB rules apply",
         "Best of 3 sets (Finals: Best of 5)",
@@ -149,12 +133,8 @@
       "teamSize": "Singles / Doubles",
       "entryFee": "₹500 (Singles) / ₹800 (Doubles)",
       "prizePool": "₹25,000",
-      "schedule": [
-        { "round": "Preliminary Rounds", "date": "March 15, 2026", "time": "9:00 AM - 6:00 PM", "venue": "Indoor Hall" },
-        { "round": "Quarter Finals", "date": "March 16, 2026", "time": "9:00 AM - 12:00 PM", "venue": "Indoor Hall" },
-        { "round": "Semi Finals", "date": "March 16, 2026", "time": "2:00 PM - 4:00 PM", "venue": "Indoor Hall" },
-        { "round": "Finals", "date": "March 16, 2026", "time": "5:00 PM", "venue": "Indoor Hall" }
-      ],
+      "schedule": [],
+      "scheduleNote": "Fixtures will be updated soon. Please check back soon.",
       "rules": [
         "BWF rules apply",
         "Best of 3 games",
@@ -183,12 +163,8 @@
       "teamSize": "Individual / Relay (4)",
       "entryFee": "₹300 (Individual) / ₹1000 (Relay)",
       "prizePool": "₹20,000",
-      "schedule": [
-        { "round": "50m Freestyle Heats", "date": "March 16, 2026", "time": "9:00 AM - 10:00 AM", "venue": "Swimming Pool" },
-        { "round": "100m Freestyle Heats", "date": "March 16, 2026", "time": "10:30 AM - 12:00 PM", "venue": "Swimming Pool" },
-        { "round": "Backstroke & Butterfly", "date": "March 16, 2026", "time": "2:00 PM - 4:00 PM", "venue": "Swimming Pool" },
-        { "round": "Relay Finals", "date": "March 16, 2026", "time": "4:30 PM - 5:30 PM", "venue": "Swimming Pool" }
-      ],
+      "schedule": [],
+      "scheduleNote": "Fixtures will be updated soon. Please check back soon.",
       "rules": [
         "FINA rules apply",
         "Electronic timing system",

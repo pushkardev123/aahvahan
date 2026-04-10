@@ -512,6 +512,23 @@
             transparent 30%);
 }
 
+/* Athletics */
+.evt-athletics {
+    --card-accent: #FFC107;
+}
+
+.evt-athletics::after {
+    background:
+        linear-gradient(180deg,
+            rgba(10, 10, 10, 0.3) 0%,
+            transparent 30%,
+            transparent 60%,
+            rgba(10, 10, 10, 0.95) 100%),
+        linear-gradient(0deg,
+            rgba(255, 193, 7, 0.18) 0%,
+            transparent 30%);
+}
+
 /* ========================================
    PAGINATION DOTS
    ======================================== */

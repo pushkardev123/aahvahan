@@ -309,6 +309,68 @@
   text-transform: uppercase;
 }
 
+.hero-announcement {
+  margin-top: var(--space-8);
+  width: min(90vw, 760px);
+  padding: var(--space-5) var(--space-6);
+  border: 1px solid rgba(212, 175, 55, 0.35);
+  border-radius: var(--radius-lg);
+  background:
+    linear-gradient(135deg, rgba(139, 0, 0, 0.28), rgba(18, 18, 18, 0.92)),
+    rgba(10, 10, 10, 0.85);
+  box-shadow:
+    0 0 0 1px rgba(212, 175, 55, 0.08),
+    0 18px 40px rgba(0, 0, 0, 0.35),
+    0 0 30px rgba(255, 107, 53, 0.12);
+  backdrop-filter: blur(10px);
+}
+
+.hero-announcement-kicker {
+  font-family: var(--font-heading);
+  font-size: var(--font-size-xs);
+  color: var(--fire-400);
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  margin-bottom: var(--space-2);
+}
+
+.hero-announcement-headline {
+  font-family: var(--font-display);
+  font-size: clamp(var(--font-size-xl), 3.2vw, var(--font-size-3xl));
+  color: var(--gold-500);
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  animation: fixtureBeacon 1.6s ease-in-out infinite;
+}
+
+.hero-announcement-text {
+  margin-top: var(--space-3);
+  font-family: var(--font-body);
+  font-size: var(--font-size-base);
+  line-height: 1.7;
+  color: var(--color-text-secondary);
+}
+
+@keyframes fixtureBeacon {
+
+  0%,
+  100% {
+    opacity: 1;
+    color: var(--gold-500);
+    text-shadow:
+      0 0 14px rgba(212, 175, 55, 0.4),
+      0 0 26px rgba(255, 107, 53, 0.14);
+  }
+
+  50% {
+    opacity: 0.55;
+    color: var(--fire-400);
+    text-shadow:
+      0 0 20px rgba(255, 107, 53, 0.5),
+      0 0 32px rgba(255, 107, 53, 0.22);
+  }
+}
+
 /* ========================================
    COUNTDOWN TIMER
    ======================================== */
@@ -765,6 +827,16 @@
     background: var(--gradient-battlefield);
     z-index: 1;
   }
+
+  .hero-announcement {
+    width: 100%;
+    padding: var(--space-4);
+    margin-top: var(--space-6);
+  }
+
+  .hero-announcement-kicker {
+    letter-spacing: 0.22em;
+  }
 }
 
 @media (max-width: 480px) {
@@ -789,6 +861,14 @@
 
   .regist {
     padding: var(--space-3) var(--space-6);
+    font-size: var(--font-size-sm);
+  }
+
+  .hero-announcement-headline {
+    letter-spacing: 0.08em;
+  }
+
+  .hero-announcement-text {
     font-size: var(--font-size-sm);
   }
 }
