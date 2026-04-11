@@ -495,23 +495,6 @@
             transparent 30%);
 }
 
-/* Varuna - Swimming */
-.evt-varuna {
-    --card-accent: #2196F3;
-}
-
-.evt-varuna::after {
-    background:
-        linear-gradient(180deg,
-            rgba(10, 10, 10, 0.3) 0%,
-            transparent 30%,
-            transparent 60%,
-            rgba(10, 10, 10, 0.95) 100%),
-        linear-gradient(0deg,
-            rgba(33, 150, 243, 0.2) 0%,
-            transparent 30%);
-}
-
 /* Athletics */
 .evt-athletics {
     --card-accent: #FFC107;

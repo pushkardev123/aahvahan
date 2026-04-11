@@ -149,36 +149,6 @@
         "phone": "+91 98765 43214",
         "email": "badminton@aahvaan.in"
       }
-    },
-    {
-      "id": "swimming",
-      "name": "Swimming",
-      "sanskrit": "वरुण क्षेत्र",
-      "battle": "Varuna's Domain - God of Waters",
-      "description": "Enter the domain of Lord Varuna, the god of waters. This is where warriors become fish, cutting through water with divine speed. Conquer the depths and claim victory in Varuna's realm.",
-      "icon": "🏊",
-      "weapon": "Varuna's Trident",
-      "dates": "March 16, 2026",
-      "venue": "DTU Swimming Pool",
-      "teamSize": "Individual / Relay (4)",
-      "entryFee": "₹300 (Individual) / ₹1000 (Relay)",
-      "prizePool": "₹20,000",
-      "schedule": [],
-      "scheduleNote": "Fixtures will be updated soon. Please check back soon.",
-      "rules": [
-        "FINA rules apply",
-        "Electronic timing system",
-        "False start results in disqualification",
-        "Lane assignments based on heats",
-        "Proper swimwear mandatory"
-      ],
-      "teams": ["Individual participants from all colleges"],
-      "coordinator": {
-        "name": "Anjali Mehta",
-        "role": "Event Head",
-        "phone": "+91 98765 43215",
-        "email": "swimming@aahvaan.in"
-      }
     }
   ],
   "meta": {
