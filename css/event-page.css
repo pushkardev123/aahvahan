@@ -163,6 +163,15 @@
     max-width: 800px;
 }
 
+.event-subsection-header {
+    font-family: var(--font-heading);
+    font-size: var(--font-size-lg);
+    color: var(--fire-500);
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    margin: var(--space-8) 0 var(--space-4);
+}
+
 /* ========================================
    SCHEDULE TABLE
    ======================================== */
@@ -273,6 +282,10 @@
     gap: var(--space-4);
 }
 
+.teams-block + .teams-block {
+    margin-top: var(--space-10);
+}
+
 .team-card {
     padding: var(--space-4);
     background: var(--dark-400);
@@ -292,6 +305,59 @@
     font-family: var(--font-heading);
     font-size: var(--font-size-sm);
     font-weight: var(--font-weight-semibold);
+    color: var(--color-text);
+}
+
+/* ========================================
+   POOLS GRID
+   ======================================== */
+.pools-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: var(--space-6);
+}
+
+.pool-card {
+    padding: var(--space-6);
+    background: linear-gradient(180deg, rgba(212, 175, 55, 0.06) 0%, rgba(18, 18, 18, 0.95) 100%);
+    border: 1px solid var(--color-border-subtle);
+    border-radius: var(--radius-lg);
+}
+
+.pool-card-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: var(--space-3);
+    margin-bottom: var(--space-4);
+}
+
+.pool-title {
+    font-family: var(--font-display);
+    font-size: var(--font-size-xl);
+    color: var(--gold-500);
+}
+
+.pool-subtitle {
+    font-family: var(--font-heading);
+    font-size: var(--font-size-xs);
+    color: var(--fire-500);
+    text-transform: uppercase;
+    letter-spacing: 0.14em;
+}
+
+.pool-team-list {
+    display: grid;
+    gap: var(--space-3);
+}
+
+.pool-team {
+    padding: var(--space-3) var(--space-4);
+    background: var(--dark-400);
+    border: 1px solid var(--color-border-subtle);
+    border-radius: var(--radius-md);
+    font-family: var(--font-heading);
+    font-size: var(--font-size-sm);
     color: var(--color-text);
 }
 
@@ -477,6 +543,10 @@
 
     .info-grid {
         grid-template-columns: repeat(2, 1fr);
+    }
+
+    .pools-grid {
+        grid-template-columns: 1fr;
     }
 }
 

@@ -529,6 +529,23 @@
             transparent 30%);
 }
 
+/* Kabaddi */
+.evt-kabaddi {
+    --card-accent: #E53935;
+}
+
+.evt-kabaddi::after {
+    background:
+        linear-gradient(180deg,
+            rgba(10, 10, 10, 0.3) 0%,
+            transparent 30%,
+            transparent 60%,
+            rgba(10, 10, 10, 0.95) 100%),
+        linear-gradient(0deg,
+            rgba(229, 57, 53, 0.18) 0%,
+            transparent 30%);
+}
+
 /* ========================================
    PAGINATION DOTS
    ======================================== */
